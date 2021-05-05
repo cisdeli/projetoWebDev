@@ -5,17 +5,17 @@ Projeto final int. web dev
   -Petshop?
   -Pode usar outra ferramente para o mockup?
 
-  -Passar project report parar o README
-  -Estudar licensas para por o repositorio publico
-  -Decidir qual ferramenta usar para o mockup
-  -Comecar o mockup:
-    -Pagina inicial
-    -Login na pagina inicial
-    -Carrinho na pagina inicial
-    Cliente
-    -Categorias
-    -Pagina do produto
-    -Finalização de compra
-    ADM
-    -Adm de estoque
-    -Registro de adms
+  -Passar project report parar o README \n
+  -Estudar licensas para por o repositorio publico\n
+  -Decidir qual ferramenta usar para o mockup\n
+  -Comecar o mockup:\n
+    -Pagina inicial\n
+    -Login na pagina inicial\n
+    -Carrinho na pagina inicial\n
+    Cliente\n
+    -Categorias\n
+    -Pagina do produto\n
+    -Finalização de compra\n
+    ADM\n
+    -Adm de estoque\n
+    -Registro de adms\n
