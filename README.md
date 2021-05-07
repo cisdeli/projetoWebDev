@@ -1,7 +1,7 @@
 # projetoWebDev <- Trocar esse nome aqui
 *Made by:*
 - Alemao, xxxxxxxx.
-- Muketa, xxxxxxxx.
+- Gabriel Tavares Brayn Rosati, 11355831.
 - Phill, xxxxxxxx.
 - Pedro Henrique Magalhães Cisdeli, 10289804.
 ## Requirements
@@ -22,6 +22,6 @@ You should start telling how to install whatever software you need, then how to 
 List any major problems you had.
 ## Comments
 Any comments you wish to add.
-### First milestone - Delete this
+## First milestone - Delete this
 You will probably only have material for the first two topics.
 But include the other topics, even if you leave them empty, and, if possible, write how you plan to implement them. For instance, for testing, you may say I intend to use the postman to test the back end, etc.
