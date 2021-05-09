@@ -1,6 +1,6 @@
 # projetoWebDev <- Trocar esse nome aqui
 *Made by:*
-- Alemao, xxxxxxxx.
+- Dennis Lemke Green, 11219108.
 - Gabriel Tavares Brayn Rosati, 11355831.
 - Phill, xxxxxxxx.
 - Pedro Henrique Magalhães Cisdeli, 10289804.
