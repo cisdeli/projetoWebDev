@@ -2,7 +2,7 @@
 *Made by:*
 - Dennis Lemke Green, 11219108.
 - Gabriel Tavares Brayn Rosati, 11355831.
-- Phill, xxxxxxxx.
+- Filipe Augusto Oliveira da Costa, 11219161.
 - Pedro Henrique Magalhães Cisdeli, 10289804.
 ## Requirements
 The requirements are given in the assignment, but you have to add any new requirements needed by your particular store implementation.
