@@ -4,6 +4,18 @@
 - Gabriel Tavares Brayn Rosati, 11355831.
 - Filipe Augusto Oliveira da Costa, 11219161.
 - Pedro Henrique Magalhães Cisdeli, 10289804.
+# To-do
+- [x] Header e Footer.
+- [x] Página Home.
+- [x] Página Accessories.
+- [x] Página Cats.
+- [x] Página Dogs.
+- [ ] Página de ADM.
+- [ ] Página About
+- [ ] Imagens de fundo.
+- [ ] Textos.
+- [ ] Logo
+- [ ] Nav Diagram, SPAS.
 ## Requirements
 The requirements are given in the assignment, but you have to add any new requirements needed by your particular store implementation.
 ## Project Description
