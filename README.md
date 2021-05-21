@@ -11,13 +11,13 @@
 - [x] Página Cats.
 - [x] Página Dogs.
 - [ ] Página de ADM.
-- [ ] Página About.
+- [x] Página About.
 - [ ] Imagens de fundo.
 - [ ] Textos.
 - [x] Logo.
 - [ ] Nav Diagram, SPAS.
 - [ ] Improve CSS.
-- [ ] Remove About from header?
+- [x] Remove About from header?
 ## Requirements
 The requirements are given in the assignment, but you have to add any new requirements needed by your particular store implementation.
 ## Project Description
