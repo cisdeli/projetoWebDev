@@ -1,12 +1,11 @@
-.nav-link{
+.nav-link {
     color: #fcfcfc;
     font-size: 18px;
-    transition: 0.5s;
-}
-.nav-link:hover{
-    color: blue;
+    transition: 0.25s ease;
 }
 
-#logo{
-    width: 35px;
+.nav-link:hover {
+    color: #1261A0;
+    transform: scale(1.1);
+    background-size: 100%;
 }

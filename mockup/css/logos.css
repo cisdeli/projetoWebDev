@@ -1,0 +1,8 @@
+#headerLogo {
+    width: 20px;
+    transition: 0.5s;
+}
+
+#headerLogo:hover {
+    transform: scale(1.2);
+}
