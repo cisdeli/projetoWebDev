@@ -1,0 +1,6 @@
+#dogJumbo {
+    background-image: url("../images/dog.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
