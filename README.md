@@ -13,7 +13,7 @@
 - [ ] Página de ADM.
 - [x] Página About.
 - [ ] Imagens de fundo.
-- [ ] Textos.
+- [x] Textos.
 - [x] Logo.
 - [ ] Nav Diagram, SPAS.
 - [ ] Improve CSS.
