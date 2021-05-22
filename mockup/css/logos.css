@@ -6,3 +6,10 @@
 #headerLogo:hover {
     transform: scale(1.2);
 }
+
+#Branch {
+	display: block;
+  margin-left: auto;
+  margin-right: 340px;
+  width: 20%;
+}
