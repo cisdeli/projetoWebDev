@@ -7,24 +7,25 @@
     transform: scale(1.2);
 }
 
-#Branch1 {
-	display: block;
-  margin-left: auto;
-  margin-right: 271.5px;
-  width: 20%;
-}
-#Branch2 {
-	display: block;
-  margin-left: auto;
-  margin-right: 340px;
-  width: 20%;
+.navbar-brand {
+    width: 7%;
+    transform: translateX(-50%);
+    left: 50%;
+    position: absolute;
 }
 
-#cartLogo{
-	width: 30px;
-	height: 30px;
+#Branch2 {
+    display: block;
+    margin-left: auto;
+    margin-right: 490px;
+    width: 10%;
+}
+
+#cartLogo {
+    width: 30px;
+    height: 30px;
 }
 
 #cartLogo:hover {
-  transform: scale(1.2);
+    transform: scale(1.2);
 }
