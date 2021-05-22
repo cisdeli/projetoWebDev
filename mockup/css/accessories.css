@@ -1,0 +1,6 @@
+#accPhoto {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.32)), url("../images/accBanner.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 100% 30%;
+}

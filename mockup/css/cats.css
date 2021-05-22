@@ -1,0 +1,6 @@
+#catPhoto {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)), url("../images/catBanner.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 100% 40%;
+}
