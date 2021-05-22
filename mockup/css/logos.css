@@ -7,9 +7,24 @@
     transform: scale(1.2);
 }
 
-#Branch {
+#Branch1 {
+	display: block;
+  margin-left: auto;
+  margin-right: 271.5px;
+  width: 20%;
+}
+#Branch2 {
 	display: block;
   margin-left: auto;
   margin-right: 340px;
   width: 20%;
+}
+
+#cartLogo{
+	width: 30px;
+	height: 30px;
+}
+
+#cartLogo:hover {
+  transform: scale(1.2);
 }
