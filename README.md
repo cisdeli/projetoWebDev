@@ -10,14 +10,15 @@
 - [x] Página Accessories.
 - [x] Página Cats.
 - [x] Página Dogs.
-- [ ] Página de ADM.
+- [x] Página de ADM.
 - [x] Página About.
+- [x] Fix responsiveness of center logo in the header.
 - [ ] Fix footer in About and Add our photos.
 - [x] Imagens de fundo.
 - [x] Textos.
 - [x] Logo.
 - [ ] Nav Diagram, SPAS.
-- [ ] Improve CSS.
+- [x] Improve CSS.
 - [x] Remove About from header?
 ## Requirements
 The requirements are given in the assignment, but you have to add any new requirements needed by your particular store implementation.
