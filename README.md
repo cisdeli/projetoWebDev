@@ -12,7 +12,7 @@
 - [x] Página Dogs.
 - [ ] Página de ADM.
 - [x] Página About.
-- [ ] Imagens de fundo.
+- [x] Imagens de fundo.
 - [x] Textos.
 - [x] Logo.
 - [ ] Nav Diagram, SPAS.
