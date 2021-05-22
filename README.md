@@ -12,6 +12,7 @@
 - [x] Página Dogs.
 - [ ] Página de ADM.
 - [x] Página About.
+- [ ] Fix footer in About and Add our photos.
 - [x] Imagens de fundo.
 - [x] Textos.
 - [x] Logo.
