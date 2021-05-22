@@ -20,6 +20,9 @@
 - [ ] Nav Diagram, SPAS.
 - [x] Improve CSS.
 - [x] Remove About from header?
+- [ ] Unique feature.
+- [ ] Fill in project report.
+- [ ] Add comment to all code.
 ## Requirements
 The requirements are given in the assignment, but you have to add any new requirements needed by your particular store implementation.
 ## Project Description
