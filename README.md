@@ -13,7 +13,7 @@
 - [x] Página de ADM.
 - [x] Página About.
 - [x] Fix responsiveness of center logo in the header.
-- [ ] Fix footer in About and Add our photos.
+- [x] Temporary fix footer in About/Login/Signup.
 - [x] Imagens de fundo.
 - [x] Textos.
 - [x] Logo.
@@ -21,7 +21,7 @@
 - [x] Improve CSS.
 - [x] Remove About from header?
 - [ ] Unique feature.
-- [ ] Fill in project report.
+- [x] Fill in project report.
 - [ ] Add comment to all code.
 
 # Project Report
@@ -31,7 +31,10 @@
 * The mockup designed covers all major pages: ADM, Home, 3 store categories (Accessories, Cat, Dog), Login and Sing up.
 * Minor pages that weren't designed yet: cart, checkout and _Unique Feature_.
 ### Project Description
-* Describe how your project implements the functionality in the requirements. Diagrams can help a lot here.
+* Our project was designed using bootstrap linked through a CDN so you won't need to download any external frameworks for now.
+* All resources used are linked in the footer of every page.
+* _Unique Feature_: it will be later implemented as a custom shop for collars and tags for your pets. The user will be able to choose from a variety of pendants, colors and info contained in the tag. We decided to delay the implementation of this feature so we can use JavaScript in it.
+* Navigation Diagram:
 ### Comments About the Code
 * _Any comment you may want to add to help understand your code. This is good programming practice._
 ### Test Plan
