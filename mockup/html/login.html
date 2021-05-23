@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width = device-width, initial-scale = 1">
-    <title>About</title>
+    <title>Login</title>
     <link rel="shortcut icon" type="image/svg" href="../images/favicon.ico.svg">
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
@@ -12,6 +12,7 @@
     <link href="../css/headers.css" rel="stylesheet">
     <link href="../css/logos.css" rel="stylesheet">
     <link href="../css/format.css" rel="stylesheet">
+    <link href="../css/login_signup.css" rel="stylesheet">
 </head>
 
 <body>
@@ -43,33 +44,29 @@
     </header>
 
     <div class="container py-4">
-        <header class="pb-3 mb-4 border-bottom">
-            <div class="d-flex align-items-center text-dark text-decoration-none">
-                <span class="fs-4">Login</span>
-            </div>
-        </header>
 
-        <div style="display: flex; justify-content: center;">
-            <div class="col-md-6" style="display: flex; justify-content: center;">
-                <form>
-                    E-mail:<br><input type="email" name="email" placeholder="youremail@mail.com"><br>
-                    Password:<br><input type="password" name="password"><br>
+        <main class="form-signin text-center">
+            <form>
 
-                </form>
-            </div>
-        </div>
-
-        <div style="display: flex; justify-content: center;">
-            <div class="col-md-3" style="display: flex; justify-content: center;">
+              <h1 class="h3 mb-3 fw-normal">Login</h1>
+          
+              <div class="form-floating">
+                <input type="email" class="form-control" id="Name" placeholder="name@example.com">
+                <label for="floatingInput">Email address</label>
+              </div>
+              <div class="form-floating">
+                <input type="password" class="form-control" id="RePassword" placeholder="Password">
+                <label for="floatingPassword">Password</label>
+              </div>
+          
+              <div class="mb-3">
                 <a href="sign_up.html">Not registered yet? Sign up!</a>
-            </div>
-        </div>
-        <br>
-        <div style="display: flex; justify-content: center;">
-            <div class="col-md-3" style="display: flex; justify-content: center;">
-                <button type="button" class="btn btn-dark">Get in!</a>
-            </div>
-        </div>
+              </div>
+
+              <button class="w-100 btn btn-lg btn-dark" type="submit">Sign in</button>
+            </form>
+          </main>
+
     </div>
 
     <!-- Temporary fix, we plan on changing the design of this page -->
