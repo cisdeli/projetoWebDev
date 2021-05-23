@@ -25,6 +25,7 @@
 - [ ] Unique feature.
 - [ ] Nav Diagram, SPAS.
 - [ ] Add comment to all code.
+- [ ] Put CDN links in the head.
 
 # Project Report
 ### Requirements
