@@ -24,7 +24,7 @@
 - [ ] Fill in project report.
 - [ ] Add comment to all code.
 
-# Project Report {border-bottom: none}
+# Project Report
 ## First Milestone
 ### Requirements
 * The requirements are given in the assignment, but you have to add any new requirements needed by your particular store implementation.
