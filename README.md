@@ -28,7 +28,7 @@
 ### Requirements
 * README file contains the Project Report and the designated topics for the first milestone.
 * Our navigation diagram is included in the [Project Description](#Project-Description) topic.
-* The mockup designed covers all major pages: ADM, Home, 3 store categories (Accessories, Cat, Dog), Login and Sing up.
+* The mockup designed covers all major pages: ADM, Home, 3 store categories (Accessories, Cat, Dog), About Us, Login and Sing up.
 * Minor pages that weren't designed yet: cart, checkout and _Unique Feature_.
 ### Project Description
 * Our project was designed using bootstrap linked through a CDN so you won't need to download any external frameworks for now.
