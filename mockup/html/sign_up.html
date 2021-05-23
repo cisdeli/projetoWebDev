@@ -12,6 +12,7 @@
     <link href="../css/headers.css" rel="stylesheet">
     <link href="../css/logos.css" rel="stylesheet">
     <link href="../css/format.css" rel="stylesheet">
+    <link href="../css/login_signup.css" rel="stylesheet">
 </head>
 
 <body>
@@ -43,39 +44,39 @@
     </header>
 
     <div class="container py-4">
-        <header class="pb-3 mb-4 border-bottom">
-            <div class="d-flex align-items-center text-dark text-decoration-none">
-                <span class="fs-4">Make your registration</span>
-            </div>
-        </header>
+        <main class="form-signin text-center">
+            <form>
 
-        <div style="display: flex; justify-content: center;">
-            <div class="col-md-6" style="display: flex; justify-content: center;">
-                <form>
-                    Name:<br><input type="text" name="name"><br>
-                    E-mail:<br><input type="email" name="email"><br>
-                    Password:<br><input type="password" name="password"><br>
+              <h1 class="h3 mb-3 fw-normal">Make your register</h1>
 
-                </form>
-            </div>
-        </div>
+              <div class="form-floating">
+                <input type="text" class="form-control" id="Name" placeholder="name@example.com">
+                <label for="floatingInput">Name</label>
+              </div>
 
-        <div style="display: flex; justify-content: center;">
-            <div class="col-md-3" style="display: flex; justify-content: center;">
-                <a href="login.html">Already have a registration? Log in!</a>
-            </div>
-        </div>
+              <div class="form-floating">
+                <input type="email" class="form-control" id="Email" placeholder="name@example.com">
+                <label for="floatingInput">Email address</label>
+              </div>
+              <div class="form-floating">
+                <input type="password" class="form-control" id="Password" placeholder="Password">
+                <label for="floatingPassword">Password</label>
+              </div>
+              <div class="form-floating">
+                <input type="password" class="form-control" id="RePassword" placeholder="Password">
+                <label for="floatingPassword">Re-enter password</label>
+              </div>
+          
+              <div class="mb-3">
+                <a href="sign_up.html">Already have a registration? Log in!</a>
+              </div>
 
-        <br>
-        <div style="display: flex; justify-content: center;">
-            <div class="col-md-3" style="display: flex; justify-content: center;">
-                <button type="button" class="btn btn-dark">Get in!</a>
-            </div>
-        </div>
+              <button class="w-100 btn btn-lg btn-dark" type="submit">Sign up</button>
+            </form>
+          </main>
+
     </div>
 
-    <!-- Temporary fix, we plan on changing the design of this page -->
-    <br><br><br><br><br><br><br><br><br><br>
 
     <!-- Footer -->
     <footer class="pt-3 mt-4 border-top bg-light">
