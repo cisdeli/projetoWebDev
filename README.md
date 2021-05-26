@@ -35,9 +35,12 @@
 ### Project Description
 * Our project was designed using bootstrap linked through a CDN so you won't need to download any external frameworks for now.
 * All resources used are linked in the footer of every page.
-* _Unique Feature_: it will be later implemented as a custom shop for collars and tags for your pets. The user will be able to choose from a variety of pendants and colors as well as the info contained in the tag. We decided to delay the implementation of this feature so we can use JavaScript in it.
+* _Unique Feature_: it will be later implemented in the Accessories page as a custom shop for collars and tags for your pets. The user will be able to choose from a variety of pendants and colors as well as the info contained in the tag. We decided to delay the implementation of this feature so we can use JavaScript in it.
 * Functionalities that we pretend to add: logic behind the ADM manage buttons and cart, the _Unique Feature_ and both Login and Sing Up systems.  
-* Navigation Diagram:
+
+<h3 align="center">Navigation Diagram</h3>
+<img alt="Navigation Diagram" title="Navigation-Diagram" src=".github/nav_diagram.png" /> 
+
 ### Comments About the Code
 * _Any comment you may want to add to help understand your code. This is good programming practice._
 ### Test Plan
