@@ -1,5 +1,5 @@
 #dogPhoto {
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)), url("../images/dogBanner.jpg");
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)), url("../images/dogs/dogBanner.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 100% 40%;

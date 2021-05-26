@@ -1,19 +1,19 @@
 #dogJumbo {
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)), url("../images/dog.jpg");
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)), url("../images/home/dog.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50%;
 }
 
 #catJumbo {
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)), url("../images/cat.jpg");
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)), url("../images/home/cat.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50%;
 }
 
 #accJumbo {
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url("../images/accessories.jpg");
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), url("../images/home/accessories.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 }
