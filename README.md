@@ -23,7 +23,7 @@
 - [x] Remove About from header?
 - [x] Fill in project report.
 - [x] Navigation Diagram.
-- [ ] Comment code.
+- [x] Comment code.
 
 # Project Report
 ### Requirements
@@ -38,7 +38,7 @@
 * Functionalities that we pretend to add: logic behind the ADM manage buttons and cart, the _Unique Feature_ and both Login and Sing Up systems.  
 
 <h3 align="center">Navigation Diagram</h3>
-<img alt="Navigation Diagram" title="Navigation-Diagram" src=".github/nav_diagram.png" /> 
+<img alt="Navigation Diagram" title="Navigation-Diagram" src=".github/nav_diagram.png" />
 
 ### Comments About the Code
 * _Any comment you may want to add to help understand your code. This is good programming practice._
