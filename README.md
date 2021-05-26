@@ -22,9 +22,8 @@
 - [x] Improve CSS.
 - [x] Remove About from header?
 - [x] Fill in project report.
-- [ ] Unique feature.
-- [ ] Nav Diagram, SPAS.
-- [ ] Add comment to all code.
+- [x] Navigation Diagram.
+- [ ] Comment code.
 
 # Project Report
 ### Requirements
