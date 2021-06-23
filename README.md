@@ -5,25 +5,13 @@
 - Filipe Augusto Oliveira da Costa, 11219161.
 - Pedro Henrique Magalhães Cisdeli, 10289804.
 # To-do
-- [x] Header and Footer.
-- [x] Fix responsiveness of center logo in the header.
-- [x] Home page.
-- [x] Accessories page.
-- [x] Cats page.
-- [x] Dogs page.
-- [x] de ADM page.
-- [x] About page.
-- [x] Sign Up page.
-- [x] Login page.
-- [x] Temporary fix footer in About/Login/Signup.
-- [x] Background images.
-- [x] Texts.
-- [x] Logos.
-- [x] Improve CSS.
-- [x] Remove About from header?
-- [x] Fill in project report.
-- [x] Navigation Diagram.
-- [x] Comment code.
+- [ ] Single Page Application
+- [ ] Fill in project Report
+- [ ] Checkout Page
+- [ ] Cart page
+- [ ] _Unique Feature_
+- [ ] Login Functionalities
+- [ ] ADM Functionalities
 
 # Project Report
 ### Requirements
