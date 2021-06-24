@@ -5,7 +5,7 @@
 - Filipe Augusto Oliveira da Costa, 11219161.
 - Pedro Henrique Magalhães Cisdeli, 10289804.
 # To-do
-- [ ] Single Page Application
+- [x] Single Page Application
 - [ ] Fill in project Report
 - [ ] Checkout Page
 - [ ] Cart page
