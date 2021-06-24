@@ -17,7 +17,7 @@ const Header = () => (
                 </a>
 
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <li><a href="/" class="nav-link px-2 fw-bold">Home</a></li>
+                    <li><a href="/" class="nav-link px-2">Home</a></li>
                     <li><a href="/accessories" class="nav-link px-2">Accessories</a></li>
                     <li><a href="/cats" class="nav-link px-2">Cats</a></li>
                     <li><a href="/dogs" class="nav-link px-2">Dogs</a></li>
