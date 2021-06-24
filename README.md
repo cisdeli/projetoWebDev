@@ -7,11 +7,14 @@
 # To-do
 - [x] Single Page Application
 - [ ] Fill in project Report
-- [ ] Checkout Page
-- [ ] Cart page
+### Appearance
+- [x] Checkout Page
+- [x] Cart page
 - [ ] _Unique Feature_
-- [ ] Login Functionalities
-- [ ] ADM Functionalities
+### JS Functionalities
+- [ ] Login
+- [ ] ADM
+- [ ] ItemPage->Cart->Checkout
 
 # Project Report
 ### Requirements
