@@ -12,7 +12,7 @@
 - [x] Cart page
 - [ ] _Unique Feature_
 ### JS Functionalities
-- [ ] Login
+- [x] Login
 - [ ] ADM
 - [ ] ItemPage->Cart->Checkout
 
