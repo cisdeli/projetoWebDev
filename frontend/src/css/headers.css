@@ -9,3 +9,12 @@
     transform: scale(1.1);
     background-size: 100%;
 }
+
+
+#admUser{
+    text-decoration: none;
+}
+#admUser:hover{
+    color: red;
+    text-decoration: underline;
+}

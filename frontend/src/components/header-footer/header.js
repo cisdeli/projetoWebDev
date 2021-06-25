@@ -62,7 +62,7 @@ function Header(){
                     {logID ? (
                         <div class="text-end">
                             {isADM ? (
-                                <a href="/adm"><h7 class="me-2 text-danger fw-bold">{name}</h7></a>
+                                <a href="/adm" id="admUser"><h7 class="me-2 text-danger fw-bold">{name}</h7></a>
                             ):(
                                 <h7 class="me-2 text-white fw-bold">{name}</h7>
                             )}
