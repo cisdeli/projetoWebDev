@@ -30,11 +30,11 @@ class Login extends Component{
       if (success == -1)
         alert("Unsuccesful login");
       else {
+        sessionStorage.setItem('@login/id', success);
         if (!(success % 2))
-          sessionStorage.setItem('@login/id', success);
+          window.location.href = "/";
         else if (success % 2)
-          sessionStorage.setItem('@login/id', success);
-        window.location.href = "/";
+          window.location.href = "/adm";
       }
     }
     checkInput(){
