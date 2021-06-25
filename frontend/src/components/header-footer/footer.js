@@ -19,7 +19,6 @@ const Footer = () => (
                     <h5>About</h5>
                     <ul class="list-unstyled text-small">
                         <li><a class="link-secondary" href="/about"><i class="fa fa-bookmark fa-fw"></i>About us</a></li>
-                        <li><a class="link-secondary" href="/adm"><i class="fa fa-bookmark fa-fw"></i>TEMP</a></li>
                     </ul>
                 </div>
                 <div class="col-6 col-md">
