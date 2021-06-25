@@ -25,17 +25,18 @@ class Login extends Component{
     }
     handleSubmit(event) {
       event.preventDefault();
-      
+
       let success = this.checkInput()
       if (success == -1)
-        console.log("Unsuccesful login");
-      else if (!(success % 2))
-        console.log("The user is a client: " + success);
-      else if (success % 2)
-        console.log("The user is an adm: " + success);
-      // window.location.href = "/";
+        alert("Unsuccesful login");
+      else {
+        if (!(success % 2))
+          sessionStorage.setItem('@login/id', success);
+        else if (success % 2)
+          sessionStorage.setItem('@login/id', success);
+        window.location.href = "/";
+      }
     }
-
     checkInput(){
         let clients = mockCreds.clients;
         let adm = mockCreds.adm;
