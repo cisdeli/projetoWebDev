@@ -6,6 +6,8 @@
 - Pedro Henrique Magalhães Cisdeli, 10289804.
 # To-do
 - [x] Single Page Application
+- [ ] Tests
+- [ ] Comment Code
 - [ ] Fill in project Report
 ### Appearance
 - [x] Checkout Page
@@ -13,8 +15,7 @@
 - [ ] _Unique Feature_
 ### JS Functionalities
 - [x] Login
-- [ ] ADM
-- [ ] ItemPage->Cart->Checkout
+- [x] ItemPage->Cart->Checkout
 
 # Project Report
 ### Requirements
@@ -44,4 +45,6 @@
 ### Problems
 * _List any major problems you had._
 ### Comments
-* _Any comments you wish to add._
+* ELABORATE Some features are outputted through alerts, make sure not to disable them to get the all functionalities.
+* ELABORATE Safety disclaimer
+* ELABORATE Functionalities not added because there is no backend
