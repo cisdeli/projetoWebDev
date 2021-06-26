@@ -1,6 +1,8 @@
 import React from "react";
 import '../../css/cart.css';
 
+import tempImg from "../../images/home/accessories.jpg"
+
 function Cart(){
     function addButton(){
         return(
@@ -29,7 +31,7 @@ function Cart(){
     function addItemAux(){
         return(
             <div class="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 rounded">
-                <div class="mr-1"><img class="rounded" src="https://i.imgur.com/XiFJkhI.jpg" width="70"/></div>
+                <div class="mr-1"><img class="rounded" src={tempImg} width="70"/></div>
                 <div class="d-flex flex-column align-items-center product-details"><span class="font-weight-bold">Name of the product</span>
                     <div class="d-flex flex-row product-desc">
                         <div class="size mr-1"><span class="text-grey">Description of the product</span></div>
