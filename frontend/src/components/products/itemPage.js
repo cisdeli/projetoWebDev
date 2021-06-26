@@ -11,7 +11,23 @@ class Item extends Component{
       super();
       // Stores user input (should add item details selected later)
       this.addItem = 0;
+      this.state = {
+        clicks:1,
+        show:true
+      };
       this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    IncrementItem = () => {
+      this.setState({
+        clicks: this.state.clicks + 1
+      });
+    }
+    DecreaseItem = () => {
+      if (this.state.clicks > 1)
+        this.setState({
+          clicks: this.state.clicks - 1
+        });
     }
 
     handleSubmit(event) {
@@ -53,9 +69,9 @@ class Item extends Component{
                                 </h5>
                                 <h5 class="sizes">quantity:
                                     <div class="d-flex flex-row align-items-center qty">
-                                        <button id="btn"><i class="fa fa-minus text-danger"></i></button>
-                                        <h5 class="text-grey mt-1 mr-1 ml-1">2</h5>
-                                        <button id="btn"><i class="fa fa-plus text-success"></i></button>
+                                        <button id="btn" onClick={this.DecreaseItem}><i class="fa fa-minus text-danger"></i></button>
+                                        <h5 class="text-grey mt-1 mr-1 ml-1">{this.state.clicks}</h5>
+                                        <button id="btn" onClick={this.IncrementItem}><i class="fa fa-plus text-success"></i></button>
                                     </div>
                                 </h5>
                                 <div class="action">

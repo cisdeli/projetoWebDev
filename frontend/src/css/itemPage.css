@@ -100,10 +100,15 @@ img {
     font-weight: bold;
     -webkit-transition: background .3s ease;
     transition: background .3s ease;
+
+}
+.btn:focus {
+    box-shadow: none;
 }
 
 .add-to-cart:hover {
-    color: #fcfcfc;
+    /* color: #fcfcfc; */
+    transform: scale(1.05);
 }
 
 .not-available {
