@@ -1,6 +1,16 @@
 import React from "react";
 
 function Grid(){
+    function addToCart() {
+      let logID = sessionStorage.getItem('@login/id');
+      if (logID) {
+        let addItem = 1;
+        sessionStorage.setItem('@item/shouldAdd', addItem);
+        window.location.href = "/cart";
+      } else
+        alert("Please log in!");
+    }
+
     function itemPreview(){
         return(
             <div class="col">
@@ -15,7 +25,7 @@ function Grid(){
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
                                 <a href="/itemPage"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Add to cart</button>
+                                <button type="button" onClick={() => addToCart()} class="btn btn-sm btn-outline-secondary">Add to cart</button>
                             </div>
                             <h5><small class="text-primary">R$1234.56</small></h5>
                         </div>
@@ -25,6 +35,7 @@ function Grid(){
         );
     }
 
+    // Returns an array of items.
     function formGrid(){
         let grid = [], length = 9;
         for(let i = 0; i < length; i++)
