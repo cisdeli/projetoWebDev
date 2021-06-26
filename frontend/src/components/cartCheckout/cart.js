@@ -46,7 +46,7 @@ function Cart(){
                     <h5 class="text-primary">$1234.56</h5>
                 </div>
                 <div class="d-flex align-items-center">
-                    <button id="btn"><i class="fa fa-trash text-danger"></i></button>
+                    <button id="btn" onClick={() => removeItem()}><i class="fa fa-trash text-danger"></i></button>
                 </div>
             </div>
         );
@@ -60,7 +60,13 @@ function Cart(){
         return items;
     }
 
-    // Not functional yet
+    /*
+        Super usefull thread about bind alternatives that I used to fix this function
+        The problem I was having was that every time i clicked to add an item to the cart,
+        the onClick event in this component would activate at the same time, which caused the item to be
+        instantly removed after being added.
+        https://stackoverflow.com/questions/29577977/unable-to-access-react-instance-this-inside-event-handler/41272784#41272784
+    */
     function removeItem(){
         // Updating number of items.
         var length = sessionStorage.getItem('@item/itemsLength');
