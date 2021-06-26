@@ -36,6 +36,7 @@ getName();
 function Header(){
     function logOut(){
         sessionStorage.removeItem('@login/id');
+        sessionStorage.setItem('@item/itemsLength', 0);
         name = "";
         isADM = 0;
         window.location.href = "/";
