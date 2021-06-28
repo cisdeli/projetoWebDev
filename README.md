@@ -22,7 +22,7 @@
 * README file contains the Project Report and the designated topics for the **second milestone**.
 * Our navigation diagram is included in the [Project Description](#Project-Description) topic.
 * All pages are now desined: ADM, Home, 3 store categories (Accessories, Cat, Dog), About Us, Login and Sing up, Cart, Checkout and _Unique Feature_.
-* Added JS functionalities to pages using mock objects (included in src/components/authentication/mockCreds.json).
+* Added JS functionalities to pages using mock objects (included in _src/components/authentication/mockCreds.json_).
 * ADM funcionality were not developed yet because currently there is no backend to manage.
 
 ---
@@ -49,6 +49,8 @@
 * As mentioned in the [Project Description](#Project-Description), some Functionalities such as ADM and Sign Up logic were not added because there is no backend.
 * Some features are outputted through alerts, make sure to keep them enable to get all functionalities.
 * Login logic was developed using a mock object. All operations are based on the credential ID. ADM IDs are odd numbers and client ones are even numbers.
+* To login use any of the credentials in _src/components/authentication/mockCreds.json_. Feel free to add any more credentials, just make sure to keep them in the same format as the ones already in the file.
+* ADM page can be accessed via login by clicking on the ADM name in red.
 * Login functionality was implemented only as an example of interation with JS. It is **COMPLETLY NOT SAFE**, please check [Comments](#Comments) session to read more about this.
 * Session Storage was used to share data between components (cart, checkout, itemPage, uniqueFeat, grid and login components).
 
