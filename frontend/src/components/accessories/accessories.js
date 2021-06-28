@@ -11,10 +11,10 @@ const Accessories = () => (
                 <div class="row py-lg-5">
                     <div class="col-lg-6 col-md-8 mx-auto">
                         <h1 class="fw-light text-white">Custom Accessories</h1>
-                        <p class="lead fs-5 text-white">Here you will find a variety of items for your loved ones.
-                            <br />For the ones who really care about their pets
-                            <br />Only the crème de la crème for your little puppies and kittens
+                        <p class="lead fs-5 text-white">You will find a variety of items for your loved ones
+                            <br />Only the crème de la crème for your pets
                         </p>
+                        <a class="btn btn-primary" href="/uniqueFeat" role="button">Custom Tags</a>
                     </div>
                 </div>
             </section>

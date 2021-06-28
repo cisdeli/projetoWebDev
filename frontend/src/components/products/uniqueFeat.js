@@ -3,10 +3,15 @@ import React, {
 } from 'react';
 
 import '../../css/itemPage.css';
+import dog from '../../images/uniqueFeat/dogWithTag.jpg'
 
-import cat from '../../images/cats/catBanner.jpg'
+import bone from '../../images/uniqueFeat/bone-solid.svg'
+import circle from '../../images/uniqueFeat/circle-solid.svg'
+import fish from '../../images/uniqueFeat/fish-solid.svg'
+import paw from '../../images/logos/paw.svg'
+import tag from '../../images/uniqueFeat/tag-solid.svg'
 
-class Item extends Component{
+class UniqueFeat extends Component{
     constructor() {
       super();
       // Stores user input (should add item details selected later)
@@ -49,18 +54,24 @@ class Item extends Component{
                         <div class="wrapper row">
                             <div class="preview col-md-6">
                                 <div class="tab-content">
-                                    <div class="tab-pane active" id="pic-1"><img src={cat} /></div>
+                                    <div class="tab-pane active" id="pic-1"><img src={dog} /></div>
                                 </div>
                             </div>
                             <div class="details col-md-6">
-                                <h3 class="product-title">Template</h3>
-                                <p class="product-description">Lorem ipsum dolor sit amet. Duis aute irure dolor in nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                <h3 class="product-title">Custom Tag Template</h3>
+                                <p class="product-description">Lorem ipsum dolor sit amet. Sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                                 <h4 class="price">price: <span class="text-primary">$1234.56</span></h4>
-
                                 <h5 class="colors">colors:
-                                    <span class="color orange"></span>
+                                    <span class="color orange" data-toggle="tooltip" title="Not In store"></span>
                                     <span class="color green"></span>
                                     <span class="color blue"></span>
+                                </h5>
+                                <h5 class="colors">options:
+                                    <img src={bone} alt="" width="40px" class="color formats"/>
+                                    <img src={circle} alt="" width="40px" class="color formats"/>
+                                    <img src={fish} alt="" width="40px" class="color formats"/>
+                                    <img src={paw} alt="" width="40px" class="color formats"/>
+                                    <img src={tag} alt="" width="40px" class="color formats"/>
                                 </h5>
                                 <h5 class="sizes">quantity:
                                     <div class="d-flex flex-row align-items-center qty">
@@ -81,4 +92,4 @@ class Item extends Component{
     }
 }
 
-export default Item;
+export default UniqueFeat;

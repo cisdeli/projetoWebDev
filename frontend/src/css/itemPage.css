@@ -111,27 +111,33 @@ img {
     transform: scale(1.05);
 }
 
-.not-available {
-    text-align: center;
-    line-height: 2em;
-}
-
-.not-available:before {
-    font-family: fontawesome;
-    content: "\f00d";
-    color: #fff;
-}
-
 .orange {
     background: #ff9f1a;
 }
+
+.orange:hover{
+    transform: scale(1.2);
+}
+
 
 .green {
     background: #85ad00;
 }
 
+.green:hover{
+    transform: scale(1.2);
+}
+
 .blue {
     background: #0076ad;
+}
+
+.blue:hover{
+    transform: scale(1.2);
+}
+
+.formats:hover{
+    transform: scale(1.05);
 }
 
 .tooltip-inner {

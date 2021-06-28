@@ -12,6 +12,7 @@ import Dogs from "./components/dogs/dogs";
 import Item from "./components/products/itemPage";
 import Login from "./components/authentication/login";
 import SignUp from "./components/authentication/signUp";
+import UniqueFeat from "./components/products/uniqueFeat";
 
 const Main = () => (
   <main>
@@ -27,6 +28,7 @@ const Main = () => (
         <Route path='/itemPage' component={Item}/>
         <Route path='/login' component={Login}/>
         <Route path='/signup' component={SignUp}/>
+        <Route path='/uniqueFeat' component={UniqueFeat}/>
     </Switch>
   </main>
 );

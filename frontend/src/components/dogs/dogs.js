@@ -1,8 +1,8 @@
-import React from "react";
 import '../../css/dogs.css';
 
-import Grid from "../products/grid";
+import React from "react";
 
+import Grid from "../products/grid";
 
 const Dogs = () => (
     <div>
@@ -13,7 +13,7 @@ const Dogs = () => (
                         <h1 class="fw-light text-white">Dog Products</h1>
                         <p class="lead fs-5 text-white">Here you will find a variety of items for your dogs
                             <br />From dog food to treats
-                            <br />Making your best friend even happier to be with you! :)
+                            <br />Making your best friend even happier to be with you
                         </p>
                     </div>
                 </div>
