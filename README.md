@@ -73,6 +73,7 @@
  * Try to add it to the cart.
 3. On the cart page click the button to go to Checkout.
 4. On the cart, try to remove all items by clicking the _trash icon_.
+5. Add some items to cart, log out and log in on the same account.
 #### Sign Up validation 
 1. Try to sign up but fail to put the same passwords on both fields.
 2. Try to sign up using an email already registered (c1@hotmail.com).
@@ -87,6 +88,7 @@
 2. Another of the same template item should be added to the cart (there is no product differentiation for now).
 3. On the right side of the Checkout page, there should be the exact amount of products that your cart has.
 4. The cart page should now display a _cart empty_ text.
+5. Your cart should be **empty**.
 #### Sign Up validation 
 1. An alert should pop up confirming that the passwords don't match.
 2. An alert should pop up confirming that the email is already in use.
