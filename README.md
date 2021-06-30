@@ -6,8 +6,8 @@
 - Pedro Henrique Magalhães Cisdeli, 10289804.
 # To-do
 - [x] Single Page Application
-- [ ] Tests
-- [ ] Comment Code
+- [x] Tests
+- [x] Comment Code
 - [x] Fill in project Report
 ### Appearance
 - [x] Checkout Page
