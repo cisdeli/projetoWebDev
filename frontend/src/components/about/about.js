@@ -2,7 +2,7 @@ import React from "react";
 
 import uspLogo from '../../images/logos/usp_logo.svg'
 
-//fix usp logo position.
+// Simply returns the html. 
 const About = () => (
     <div class="container py-4">
         <header class="pb-3 mb-4 border-bottom">

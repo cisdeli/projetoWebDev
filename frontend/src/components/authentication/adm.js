@@ -10,7 +10,7 @@ import group from '../../images/adm/group.svg'
 import stock from '../../images/adm/stock.svg'
 import paw from '../../images/logos/paw.svg'
 
-
+// Simply returns the html used for the ADM page, it can be accessed by clicking the name of the adm when logged in.
 const Adm = () => (
     <div>
         <div class="container px-4 py-5">

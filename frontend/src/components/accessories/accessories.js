@@ -3,7 +3,7 @@ import '../../css/accessories.css';
 
 import Grid from "../products/grid";
 
-
+// Simply returns the html used for the top banner, the product grid has its own component in "products"
 const Accessories = () => (
     <div>
         <div id="accPhoto">

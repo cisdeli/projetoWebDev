@@ -4,12 +4,13 @@ import React, {
 
 import '../../css/login_signup.css';
 
+// Importing the json file that contains the mock credentials.
 import mockCreds from './mockCredentials'
 
 class Login extends Component{
     constructor() {
       super();
-      // Stores user input (superrr secure)
+      // Stores user input (not secure at all please read the Comment topic in README)
       this.state = {
         email: '',
         password: ''
@@ -18,25 +19,32 @@ class Login extends Component{
       this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    // Gets input
     handleChange(event) {
       this.setState({
         [event.target.name]: event.target.value
       });
     }
+    // Controls what happens when submit button is pressed.
     handleSubmit(event) {
       event.preventDefault();
 
-      let success = this.checkInput()
+      let success = this.checkInput();
+      // Checks if the log in attempt was succesful.
       if (success == -1)
         alert("Unsuccesful login");
       else {
+        // Stores log in ID.
         sessionStorage.setItem('@login/id', success);
+        // Checks if is a client or an adm by its ID.
         if (!(success % 2))
           window.location.href = "/";
         else if (success % 2)
           window.location.href = "/adm";
       }
     }
+
+    // Checks email;psw pair in the json file.
     checkInput(){
         let clients = mockCreds.clients;
         let adm = mockCreds.adm;

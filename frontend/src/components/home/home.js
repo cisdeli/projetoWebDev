@@ -1,6 +1,7 @@
 import React from "react";
 import '../../css/jumbotron.css';
 
+// Simply returns the html. 
 const Home = () => (
     <div class="container py-4">
         <header class="pb-3 mb-4 border-bottom">

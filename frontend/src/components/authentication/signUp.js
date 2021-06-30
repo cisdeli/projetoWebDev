@@ -9,7 +9,7 @@ import mockCreds from './mockCredentials'
 class SignUp extends Component{
     constructor() {
       super();
-      // Stores user input (superrr secure)
+      // Stores user input (not secure at all please read the Comment topic in README)
       this.state = {
         name: '',
         email: '',
@@ -20,28 +20,32 @@ class SignUp extends Component{
       this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    // Gets input
     handleChange(event) {
       this.setState({
         [event.target.name]: event.target.value
       });
     }
+    // Controls what happens when submit button is pressed.
     handleSubmit(event) {
       event.preventDefault();
       // window.location.href = "/";
-      console.log(this.checkInput());
+
+      // Checks input data when submit button is pressed.
+      this.checkInput();
     }
 
     // Just checks if the input is ok, it does not register the input anywhere because the backend isn't ready yet.
     checkInput() {
-      // Looping through clients
+      // Checks if psws are equal
       if (this.state.password != this.state.repassword){
           alert("Passwords don't match!");
           return -1;
-      }
-      else {
+      } else {
         let clients = mockCreds.clients;
         let adm = mockCreds.adm;
-
+        // Checking if email is already in use.
+        // Looping through clients
         for (var i = 0; i < clients.length; i++) {
           var obj = clients[i];
           if (obj.email == this.state.email){

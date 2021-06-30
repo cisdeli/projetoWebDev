@@ -1,9 +1,13 @@
 import React from "react";
 
 function Grid(){
+    // Handles add to cart button press
     function addToCart() {
+      // Gets the login id from sessionStorage, null means that user isn't logged.
       let logID = sessionStorage.getItem('@login/id');
+      // Checks if the user is logged in
       if (logID) {
+        // Stores that an item should be added and go to cart page.
         let addItem = 1;
         sessionStorage.setItem('@item/shouldAdd', addItem);
         window.location.href = "/cart";
@@ -11,6 +15,7 @@ function Grid(){
         alert("Please log in!");
     }
 
+    // Stores a single item Thumbnail template.
     function itemPreview(){
         return(
             <div class="col">

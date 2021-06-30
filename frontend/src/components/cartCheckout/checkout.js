@@ -4,7 +4,7 @@ import '../../css/checkout.css';
 
 import cart from '../../images/logos/cart.svg'
 function Checkout(){
-
+    // Stores a single item in cart
     function itemInCart(){
         return(
             <li class="list-group-item d-flex justify-content-between lh-sm">
@@ -16,6 +16,7 @@ function Checkout(){
             </li>
         );
     }
+    // Returns an array of items in cart according to cart length
     function addItemToCart(){
         let items = [], length = 0;
         length = sessionStorage.getItem('@item/itemsLength');
@@ -24,11 +25,12 @@ function Checkout(){
         return items;
     }
 
+    // Auxiliar function to get the array of items.
     function showCartItems(){
         return (addItemToCart());
     }
 
-    // auxiliar
+    // Returns the total template.
     function addTotal(){
         return(
             <li class="list-group-item d-flex justify-content-between">

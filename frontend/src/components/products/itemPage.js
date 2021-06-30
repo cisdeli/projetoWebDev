@@ -9,7 +9,7 @@ import cat from '../../images/cats/catBanner.jpg'
 class Item extends Component{
     constructor() {
       super();
-      // Stores user input (should add item details selected later)
+      // Stores user input
       this.addItem = 0;
       this.state = {
         clicks:1,
@@ -18,6 +18,7 @@ class Item extends Component{
       this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    // Functions that increase and decrease quantity
     IncrementItem = () => {
       this.setState({
         clicks: this.state.clicks + 1
@@ -30,10 +31,14 @@ class Item extends Component{
         });
     }
 
+    // Handles add to cart button press
     handleSubmit(event) {
       event.preventDefault();
+      // Gets the login id from sessionStorage, null means that user isn't logged.
       let logID = sessionStorage.getItem('@login/id');
+      // Checks if the user is logged in
       if (logID) {
+        // Stores that an item should be added and go to cart page.
         this.addItem = 1;
         sessionStorage.setItem('@item/shouldAdd', this.addItem);
         window.location.href = "/cart";
