@@ -5,17 +5,14 @@
 - Filipe Augusto Oliveira da Costa, 11219161.
 - Pedro Henrique Magalhães Cisdeli, 10289804.
 # To-do
-- [x] Single Page Application
-- [x] Tests
-- [x] Comment Code
-- [x] Fill in project Report
-### Appearance
-- [x] Checkout Page
-- [x] Cart page
-- [x] _Unique Feature_
+- [ ] Add backend 
+- [ ] Tests
+- [ ] Comment Code
+- [ ] Fill in project Report
 ### JS Functionalities
-- [x] Login
-- [x] ItemPage->Cart->Checkout
+- [ ] Sign Up
+- [ ] All products JS funcs
+- [ ] Adm manage funcs
 
 # Project Report
 ### Requirements
