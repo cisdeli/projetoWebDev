@@ -14,10 +14,12 @@ const router = express.Router();
 const indexRoute = require('./routes/index-route');
 const customerRoute = require('./routes/customer-route');
 const productRoute = require('./routes/product-route');
+const checkoutRoute = require('./routes/checkout-route');
 
 // Models
 const Customer = require('./models/Customer');
 const Product = require('./models/Product');
+const Checkout = require('./models/Checkout');
 
 // MiddleWares
 app.use(express.json());
@@ -41,6 +43,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/', indexRoute);
 app.use('/customers', customerRoute);
 app.use('/products', productRoute);
+app.use('/checkout', checkoutRoute);
 
 
 // Database connection
