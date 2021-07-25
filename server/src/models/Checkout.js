@@ -31,24 +31,22 @@ const schema = mongoose.Schema({
         type: Number,
         required: true
     },
-    card: [{
-        nameOnCard: {
-            type: String,
-            required: false
-        },
-        cardNumber: {
-            type: Number,
-            required: false
-        },
-        expiration: {
-            type: Date,
-            required: false
-        },
-        cvv: {
-            type: Number,
-            required: false
-        }
-    }]
+    nameOnCard: {
+        type: String,
+        required: true
+    },
+    cardNumber: {
+        type: Number,
+        required: true
+    },
+    expiration: {
+        type: String,
+        required: true
+    },
+    cvv: {
+        type: Number,
+        required: true
+    }
 })
 
 module.exports = mongoose.model('Checkout', schema);

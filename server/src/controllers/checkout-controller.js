@@ -30,25 +30,10 @@ exports.getById = async (req, res, next) => {
     };
 };
 
-
-
-// card: [{
-//     nameOnCard:
-//         req.body.card[0].nameOnCard
-//     ,
-//     cardNumber:
-//         req.body.card[0].cardNumber
-//     ,
-//     expiration:
-//         req.body.card[0].expiration
-//     ,
-//     cvv:
-//         req.body.card[0].cvv
-// }]
-
 exports.post = async (req, res, next) => {
     try {
         const checkoutValidator = new CheckoutValidator();
+        console.log(req.body);
         if (checkoutValidator.postValidation(req.body)) {
             const res1 = await repository.post({
                 firstName: req.body.firstName,
@@ -57,8 +42,14 @@ exports.post = async (req, res, next) => {
                 address: req.body.address,
                 state: req.body.state,
                 city: req.body.city,
-                cep: req.body.cep
+                cep: req.body.cep,
+                nameOnCard:req.body.nameOnCard,
+                cardNumber:req.body.cardNumber,
+                expiration:req.body.expiration,
+                cvv:req.body.cvv
+
             });
+            console.log(res1);
             res.status(201).send({
                 message: "Sucessful checkout"
             });
