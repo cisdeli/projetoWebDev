@@ -5,14 +5,17 @@
 - Filipe Augusto Oliveira da Costa, 11219161.
 - Pedro Henrique Magalhães Cisdeli, 10289804.
 # To-do
-- [ ] Add backend 
 - [ ] Tests
 - [ ] Comment Code
 - [ ] Fill in project Report
 ### JS Functionalities
-- [ ] Sign Up
-- [ ] All products JS funcs
-- [ ] Adm manage funcs
+- [ ] Integrate backend
+- [ ] Minor changes
+### Backend
+- [x] Customer
+- [ ] Order
+- [ ] Product
+- [ ] Checkout
 
 # Project Report
 ### Requirements
