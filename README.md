@@ -13,9 +13,9 @@
 - [ ] Minor changes
 ### Backend
 - [x] Customer
-- [ ] Order
-- [ ] Product
-- [ ] Checkout
+- [x] Order
+- [x] Product
+- [x] Checkout
 
 # Project Report
 ### Requirements
