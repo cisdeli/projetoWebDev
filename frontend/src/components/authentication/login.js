@@ -1,11 +1,8 @@
 import React, {
   Component
 } from 'react';
-
+import axios from 'axios'
 import '../../css/login_signup.css';
-
-// Importing the json file that contains the mock credentials.
-import mockCreds from './mockCredentials'
 
 class Login extends Component{
     constructor() {
@@ -25,44 +22,35 @@ class Login extends Component{
         [event.target.name]: event.target.value
       });
     }
+
     // Controls what happens when submit button is pressed.
     handleSubmit(event) {
-      event.preventDefault();
-
-      let success = this.checkInput();
-      // Checks if the log in attempt was succesful.
-      if (success == -1)
-        alert("Unsuccesful login");
-      else {
-        // Stores log in ID.
-        sessionStorage.setItem('@login/id', success);
-        // Checks if is a client or an adm by its ID.
-        if (!(success % 2))
-          window.location.href = "/";
-        else if (success % 2)
-          window.location.href = "/adm";
-      }
-    }
-
-    // Checks email;psw pair in the json file.
-    checkInput(){
-        let clients = mockCreds.clients;
-        let adm = mockCreds.adm;
-        //Looping through clients
-        for (var i = 0; i < clients.length; i++) {
-          var obj = clients[i];
-          if (obj.email == this.state.email && obj.password == this.state.password)
-            return obj.id;
+        event.preventDefault();
+        const user = {
+            email: this.state.email,
+            password: this.state.password,
         }
-        //Looping through adms
-        for (var i = 0; i < adm.length; i++) {
-          var obj = adm[i];
-          if (obj.email == this.state.email && obj.password == this.state.password)
-            return obj.id;
-        }
-        return -1;
+        axios.get('http://localhost:8000/customers/authenticate/' + user.email + '/' + user.password)
+            .then((res) => {
+                if (res.status == 200)
+                    alert("Email or password are not valid!")
+                else if (res.status == 201) {
+                    // alert("Sucessful log in! Enjoy Shop Do Pet")
+                    const userData = res.data.data;
+                    sessionStorage.setItem('@login/id', userData._id);
+                    sessionStorage.setItem('@login/name', userData.name);
+                    if (userData.roles == 'user'){
+                        window.location.href = "/";
+                    }
+                    else if (userData.roles == 'admin'){
+                        sessionStorage.setItem('@login/isADM', 1);
+                        window.location.href = "/adm";
+                    }
+                } else if (res.status == 500) {
+                    alert("Failed to process requisition!")
+                }
+            })
     }
-
 
     render(){
         return (

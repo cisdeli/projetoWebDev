@@ -1,10 +1,9 @@
 import React, {
   Component
 } from 'react';
+import axios from 'axios';
 
 import '../../css/login_signup.css';
-
-import mockCreds from './mockCredentials'
 
 class SignUp extends Component{
     constructor() {
@@ -22,47 +21,44 @@ class SignUp extends Component{
 
     // Gets input
     handleChange(event) {
-      this.setState({
-        [event.target.name]: event.target.value
-      });
+        this.setState({
+            [event.target.name]: event.target.value
+        });
     }
     // Controls what happens when submit button is pressed.
     handleSubmit(event) {
-      event.preventDefault();
-      // window.location.href = "/";
+        event.preventDefault();
 
-      // Checks input data when submit button is pressed.
-      this.checkInput();
+        const newUser = {
+            name: this.state.name,
+            email: this.state.email,
+            password: this.state.password,
+        }
+        // Checks input data when submit button is pressed.
+        if (this.checkInput()) {
+            axios.post('http://localhost:8000/customers/', newUser)
+                .then((res) => {
+                    console.log(res.data);
+                    if(res.status == 202)
+                        alert("Email already in use!")
+                    else if(res.status == 201){
+                        alert("Sucessful sign up! Please log in")
+                        window.location.href = "/login";
+                    }
+                    else if(res.status == 200){
+                        alert("Error, make sure that your name has at least 3 letters!")
+                    }
+
+                })
+        }
     }
-
     // Just checks if the input is ok, it does not register the input anywhere because the backend isn't ready yet.
     checkInput() {
       // Checks if psws are equal
       if (this.state.password != this.state.repassword){
           alert("Passwords don't match!");
-          return -1;
-      } else {
-        let clients = mockCreds.clients;
-        let adm = mockCreds.adm;
-        // Checking if email is already in use.
-        // Looping through clients
-        for (var i = 0; i < clients.length; i++) {
-          var obj = clients[i];
-          if (obj.email == this.state.email){
-              alert("Email is already registered");
-              return -1;
-          }
-        }
-        //Looping through adms
-        for (var i = 0; i < adm.length; i++) {
-          var obj = adm[i];
-          if (obj.email == this.state.email){
-              alert("Email is already registered");
-              return -1;
-          }
-        }
+          return 0;
       }
-      alert("Successfully Registered Account (kinda =P, no backend =P)");
       return 1;
     }
 
