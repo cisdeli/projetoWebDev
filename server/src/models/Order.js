@@ -1,9 +1,8 @@
 'use strict';
 
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
 
-const schema = new Schema({
+const schema = mongoose.Schema({
     customer: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Customer'
@@ -19,7 +18,6 @@ const schema = new Schema({
         enum: ['created', 'done'],
         default: 'created'
     },
-
     items: [{
         quantity: {
             type: Number,
@@ -34,6 +32,10 @@ const schema = new Schema({
             ref: 'Product'
         }
     }],
+    totalPrice: {
+        type: Number,
+        required: true
+    }
 });
 
 module.exports = mongoose.model('Order', schema);
