@@ -71,7 +71,7 @@ exports.post = async (req, res, next) => {
                 roles: ['user']
             });
             if (res1 === null) {
-                res.status(200).send([{
+                res.status(202).send([{
                     message: 'Email already in use'
                 }]);
             } else{
