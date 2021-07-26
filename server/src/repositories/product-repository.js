@@ -20,7 +20,7 @@ exports.get = async () => {
     };
     const res = await Product.find(
         query,
-        'name price description image quantity category'
+        'name slug price description image quantity category'
     );
     return res;
 }

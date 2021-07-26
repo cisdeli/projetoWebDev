@@ -34,7 +34,7 @@ ProductValidation.prototype.postValidation = (data) => {
     validator.contains(data.slug, " ", 'Field Slug can not have any spaces');
 
     // Description validator
-    validator.hasMinLen(data.description, 10, 'Field Description must have at least 10 letters');
+    validator.hasMinLen(data.description, 5, 'Field Description must have at least 5 letters');
     validator.hasMaxLen(data.description, 500, 'Field Name can not have more than 500 letters');
 
     if (validator.isValid()) {

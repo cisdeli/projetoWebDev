@@ -30,7 +30,7 @@ exports.getBySlug = async (req, res, next) => {
     try {
         let data = await repository.getBySlug(req.params.slug);
         if (data === null) {
-            res.status(200).send([{
+            res.status(202).send([{
                 message: 'Product not found'
             }]);
         } else {
@@ -72,7 +72,7 @@ exports.checkPutData = async (req, res, next) => {
 exports.put = async (req, res, next) => {
     try {
         await repository.update(req.params.id, req.body, req.file);
-        res.status(200).send({
+        res.status(201).send({
             message: 'Product updated'
         })
     } catch (err) {
@@ -84,12 +84,11 @@ exports.put = async (req, res, next) => {
     };
 };
 
-
 exports.delete = async (req, res, next) => {
     try {
         const cb = await repository.delete(req.params.id);
         if (cb === null) {
-            res.status(200).send([{
+            res.status(202).send([{
                 message: 'Product not found'
             }]);
         } else {
