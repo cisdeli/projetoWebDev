@@ -38,7 +38,6 @@ class SignUp extends Component{
         if (this.checkInput()) {
             axios.post('http://localhost:8000/customers/', newUser)
                 .then((res) => {
-                    console.log(res.data);
                     if(res.status == 202)
                         alert("Email already in use!")
                     else if(res.status == 201){
