@@ -321,13 +321,15 @@ class Adm extends Component{
                 <div class="controls">
                     <div class="row py-5">
                         <div class="col-sm-4">
+                            <h4 class="pb-2 d-flex border-bottom">See Checkout forms</h4>
+                            <a href="http://localhost:8000/checkout" target='blank'><button type="button" class="btn btn-dark">Get Checkout API</button></a>
+                        </div>
+                        <div class="col-sm-4">
                             <h4 class="pb-2 d-flex border-bottom">See orders</h4>
                             <a href="http://localhost:8000/orders" target='blank'><button type="button" class="btn btn-dark">Get Orders API</button></a>
                         </div>
                         <div class="col-sm-4">
-                        </div>
-                        <div class="col-sm-4">
-                            <h4 class="pb-2 d-flex justify-content-center border-bottom">Search user by ID</h4>
+                            <h4 class="pb-2 d-flex justify-content-center border-bottom">Search user order by ID</h4>
                             <form class="form-group" onSubmit={this.handleOrdersSearchSubmit}>
                                 <label for="form_id">User ID</label>
                                 <input id="form_id" type="text" name="order_s_user_id" class="form-control" placeholder="User ID" onChange={this.handleChange} required="required"/>
