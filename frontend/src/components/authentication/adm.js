@@ -13,24 +13,29 @@ import stock from '../../images/adm/stock.svg'
 // ADM page, it can be accessed by clicking the name of the adm when logged in.
 class Adm extends Component{
     constructor() {
-      super();
-      // Stores user input (not secure at all please read the Comment topic in README)
-      this.state = {
-        stock_s_product_slugname: '',
-        stock_d_product_id: '',
-        stock_a_product_name: '',
-        stock_a_product_slug_name: '',
-        stock_a_product_description: '',
-        stock_a_product_price: '',
-        stock_a_product_quantity: '',
-        stock_a_product_category: ''
-      };
-      this.handleChange = this.handleChange.bind(this);
+        super();
+        // Stores user input (not secure at all please read the Comment topic in README)
+        this.state = {
+            stock_s_product_slugname: '',
+            stock_d_product_id: '',
+            stock_a_product_name: '',
+            stock_a_product_slug_name: '',
+            stock_a_product_description: '',
+            stock_a_product_price: '',
+            stock_a_product_quantity: '',
+            stock_a_product_category: '',
+            order_s_user_id: ''
+        };
+        this.handleChange = this.handleChange.bind(this);
 
-      //stock
-      this.handleStockSearchSubmit = this.handleStockSearchSubmit.bind(this);
-      this.handleStockDeleteSubmit = this.handleStockDeleteSubmit.bind(this);
-      this.handleStockAddSubmit = this.handleStockAddSubmit.bind(this);
+        // Stock
+        this.handleStockSearchSubmit = this.handleStockSearchSubmit.bind(this);
+        this.handleStockDeleteSubmit = this.handleStockDeleteSubmit.bind(this);
+        this.handleStockAddSubmit = this.handleStockAddSubmit.bind(this);
+
+        // Users
+        // Orders
+        this.handleOrdersSearchSubmit = this.handleOrdersSearchSubmit.bind(this);
     }
 
     //Auxiliar functions
@@ -134,7 +139,7 @@ class Adm extends Component{
                                     <button class="btn btn-lg btn-dark" type="submit">Search</button>
                                 </form>
                                 <h4 class="pb-2 py-5 d-flex border-bottom">See stock</h4>
-                                <a href="http://localhost:8000/products" target='blank'><button type="button" class="btn btn-dark">Get API</button></a>
+                                <a href="http://localhost:8000/products" target='blank'><button type="button" class="btn btn-dark">Get Stock API</button></a>
 
                             </div>
                             <div class="col-sm-4">
@@ -224,30 +229,48 @@ class Adm extends Component{
     }
 
     // Orders
+    handleOrdersSearchSubmit(event) {
+        event.preventDefault();
+        const id = this.state.order_s_user_id;
+        console.log(id)
+        if (id) {
+            axios.get('http://localhost:8000/orders/customer/' + id)
+                .then((res) => {
+                    if(res.status == 202)
+                        alert("User has no orders")
+                    else if(res.status == 200){
+                        window.open('http://localhost:8000/orders/customer/' + id, 'blank')
+                    }
+                    else if(res.status == 500){
+                        alert("Failed to process requisition")
+                    }
+                })
+        }
+    }
+
     ordersFrontEnd(){
         return(
             <div class="container px-4 py-5">
                 <h2 class="pb-2 d-flex justify-content-center border-bottom" id="orders">Orders Control</h2>
-                <form id="contact-form" role="form">
-                    <div class="controls">
-                        <div class="row py-5">
-                            <div class="col-sm-4">
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="form-group">
-                                    <h4 class="pb-2 d-flex justify-content-center border-bottom">Search user by ID</h4>
-                                    <label for="form_id">User ID</label>
-                                    <input id="form_id" type="number" name="id" class="form-control" placeholder="User ID" required="required"/>
-                                    <div class="help-block with-errors"></div>
-                                    <br/>
-                                    <button class="btn btn-lg btn-dark" type="submit">Search</button>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                            </div>
+                <div class="controls">
+                    <div class="row py-5">
+                        <div class="col-sm-4">
+                            <h4 class="pb-2 d-flex border-bottom">See orders</h4>
+                            <a href="http://localhost:8000/orders" target='blank'><button type="button" class="btn btn-dark">Get Orders API</button></a>
+                        </div>
+                        <div class="col-sm-4">
+                        </div>
+                        <div class="col-sm-4">
+                            <h4 class="pb-2 d-flex justify-content-center border-bottom">Search user by ID</h4>
+                            <form class="form-group" onSubmit={this.handleOrdersSearchSubmit}>
+                                <label for="form_id">User ID</label>
+                                <input id="form_id" type="text" name="order_s_user_id" class="form-control" placeholder="User ID" onChange={this.handleChange} required="required"/>
+                                <br/>
+                                <button class="btn btn-lg btn-dark" type="submit">Search</button>
+                            </form>
                         </div>
                     </div>
-                </form>
+                </div>
             </div>
         );
     }
