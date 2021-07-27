@@ -6,8 +6,8 @@
 - Pedro Henrique Magalhães Cisdeli, 10289804.
 # To-do
 - [ ] Tests
-- [ ] Comment Code
-- [ ] Fill in project Report
+- [x] Comment Code
+- [x] Fill in project Report
 ### JS Functionalities
 - [ ] Minor changes
 ### Front/Back integration
@@ -25,20 +25,19 @@
 
 # Project Report
 ### Requirements
-* README file contains the Project Report and the designated topics for the **second milestone**.
+* README file contains the Project Report and the designated topics for the **final milestone**.
 * Our navigation diagram is included in the [Project Description](#Project-Description) topic.
 * All pages are now desined: ADM, Home, 3 store categories (Accessories, Cat, Dog), About Us, Login and Sing up, Cart, Checkout and _Unique Feature_.
-* Added JS functionalities to pages using mock objects (included in _src/components/authentication/mockCreds.json_).
-* ADM funcionality were not developed yet because currently there is no backend to manage.
+* All User funcionalities are now developed and integrated with the database.
+* All ADM funcionalities are now developed and integrated with the database.
 
 ---
 
 ### Project Description
-* Our project was designed using bootstrap linked through a CDN and ReactJS, the instalation guide is included in the [Build Procedures](#Build-Procedures) topic.
+* Our project was designed using bootstrap linked through a CDN, ReactJS and MongoDB, the instalation guide is included in the [Build Procedures](#Build-Procedures) topic.
 * All resources used are linked in the footer of every page.
-* _Unique Feature_: it is implemented in the Accessories page as a custom shop for collars and tags for your pets. The user can to choose from a variety of pendants and colors. 
-* Functionalities added: cart and checkout,  _Unique Feature_ and Login. 
-* Functionalities that we pretend to add: logic behind the ADM manage buttons and a fully functional Sing Up. Currently the Sing Up page can only validate user input data, it cannot add new credentials to the mock object. 
+* _Unique Feature_: it is implemented in the Accessories page as a custom shop for collars and tags for your pets. The user can to choose from a variety of pendants. 
+* Functionalities added: cart and checkout,  _Unique Feature_, Login, a fully functional Sing Up and logic behind the ADM manage buttons. 
 
 <h3 align="center">Navigation Diagram</h3>
 <img alt="Navigation Diagram" title="Navigation-Diagram" src=".github/nav_diagram.png" />
@@ -52,10 +51,9 @@
   * _index.js_ sets up react-router-dom and injects the JS code in the _index.html_ file in **_public_** folder.
   * _App.js_ contains the structure of every page, Header, Component and Footer
   * _main.js_ contains all components    
-* As mentioned in the [Project Description](#Project-Description), some Functionalities such as ADM and Sign Up logic were not added because there is no backend.
 * Some features are outputted through alerts, make sure to keep them enable to get all functionalities.
-* Login logic was developed using a mock object. All operations are based on the credential ID. ADM IDs are odd numbers and client ones are even numbers.
-* To login use any of the credentials in _src/components/authentication/mockCreds.json_. Feel free to add any more credentials, just make sure to keep them in the same format as the ones already in the file.
+* Login and Signup logic is now integrated with the backend.
+* To login use any of the credentials in _http://localhost:3000/customers_. Feel free to add any more credentials, just make sure to keep them in the same format as the ones already database.
 * ADM page can be accessed via login by clicking on the ADM name in red.
 * Login functionality was implemented only as an example of interation with JS. It is **COMPLETLY NOT SAFE**, please check [Comments](#Comments) session to read more about this.
 * Session Storage was used to share data between components (cart, checkout, itemPage, uniqueFeat, grid and login components).
@@ -129,7 +127,7 @@
     $ git clone https://github.com/sprmbng/projetoWebDev.git
 ```
 
-##### Install the necessary dependencies using npm and start the application
+##### Install the necessary dependencies using npm and start the *application*
 
 ```sh
     # Make sure to run the following commands inside 'frontend' folder
@@ -143,10 +141,25 @@
     # Shortly after a page should open automatically.
     # You can also access it through http://localhost:3000/.
 ```
+
+##### Install the necessary dependencies using npm and start the *server*
+
+```sh
+    # Make sure to run the following commands inside 'server' folder
+    $ cd server/
+
+    # Install dependencies
+    $ npm install
+
+    # After installing all dependencies 
+    $ npm start
+    # You can access the server API through http://localhost:8000/.
+```
+
 ---
 ### Problems
 * No problems
 ### Comments
-* Please do not add real credentials to the mock object, the storage of the fake credentials is **COMPLETLY NOT SAFE** so is the functions that handle the login logic.
+* Please do not add real credentials to the data base, the storage of the fake credentials is **COMPLETLY NOT SAFE** so is the functions that handle the login logic.
 * We take no responsibility or liability to any issues caused because of this.
 
