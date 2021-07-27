@@ -1,11 +1,15 @@
-import React from "react";
+import React, {
+  Component
+} from 'react';
+import axios from 'axios';
+
 import '../../css/cart.css';
 
 import tempImg from "../../images/home/accessories.jpg"
 
-function Cart(){
+class Cart extends Component{
     // Returns Checkout button.
-    function addButton(){
+    addButton(){
         return(
             <div class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded">
                 <a href="/checkout"><button class="btn btn-primary btn-block btn-lg ml-2 pay-button" type="button">Checkout</button></a>
@@ -13,7 +17,7 @@ function Cart(){
         );
     }
     // Returns Cart Empty text.
-    function addEmpty(){
+    addEmpty(){
         return(
             <div class="py-5 text-center">
                 <p>Your cart is empty.</p>
@@ -21,17 +25,17 @@ function Cart(){
         );
     }
     // Check which (Checkout button or Empty text) should be added
-    function addEnd(){
+    addEnd(){
         var length = sessionStorage.getItem('@item/itemsLength');
         // If there are items add Checkout button, if not add text empty cart.
         if(length >= 1)
-            return addButton();
+            return this.addButton();
         else
-            return addEmpty();
+            return this.addEmpty();
     }
 
     // Returns html of an item template
-    function addItemAux(pos){
+    addItemAux(pos){
         return(
             <div class="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 rounded">
                 <div class="mr-1"><img class="rounded" src={tempImg} width="70"/></div>
@@ -47,18 +51,18 @@ function Cart(){
                     <h5 class="text-primary">$1234.56</h5>
                 </div>
                 <div class="d-flex align-items-center">
-                    <button id="btn" onClick={() => removeItem(pos)}><i class="fa fa-trash text-danger"></i></button>
+                    <button id="btn" onClick={() => this.removeItem(pos)}><i class="fa fa-trash text-danger"></i></button>
                 </div>
             </div>
         );
     }
 
     // Forms the array of items according to cart length.
-    function addItem(){
+    addItem(){
         let items = [], length = 0;
         length = sessionStorage.getItem('@item/itemsLength');
         for(let i = 0; i < length; i++)
-            items.push(addItemAux());
+            items.push(this.addItemAux());
         return items;
     }
 
@@ -70,7 +74,7 @@ function Cart(){
         https://stackoverflow.com/questions/29577977/unable-to-access-react-instance-this-inside-event-handler/41272784#41272784
     */
     // Removes item from cart length
-    function removeItem(pos){
+    removeItem(pos){
         // Updating number of items.
         var length = sessionStorage.getItem('@item/itemsLength');
         length--;
@@ -79,7 +83,7 @@ function Cart(){
     }
 
     // Checks if an item was added through AddToCart buttons in Grid and ItemPages.
-    function shouldAdd() {
+    shouldAdd() {
       let hasItem = sessionStorage.getItem('@item/shouldAdd');
       let aux = hasItem;
       if (aux) {
@@ -94,25 +98,28 @@ function Cart(){
       }
     }
 
-    function showCartItems(){
+    showCartItems(){
         // Should add another item?
-        shouldAdd();
+        this.shouldAdd();
         // Renders all items.
-        return (addItem());
+        return (this.addItem());
     }
 
-    return (
-        <div class="container mt-5 mb-5">
-            <div class="d-flex justify-content-center row">
-                <div class="col-md-8">
-                    <div class="p-2">
-                        <h4>Shopping cart</h4>
+    render(){
+        return(
+            <div class="container mt-5 mb-5">
+                <div class="d-flex justify-content-center row">
+                    <div class="col-md-8">
+                        <div class="p-2">
+                            <h4>Shopping cart</h4>
+                        </div>
+                        {this.showCartItems()}
+                        {this.addEnd()}
                     </div>
-                    {showCartItems()}
-                    {addEnd()}
                 </div>
             </div>
-        </div>
-    );
+        );
+    }
 }
+
 export default Cart;

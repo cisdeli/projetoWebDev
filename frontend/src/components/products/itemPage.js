@@ -56,9 +56,11 @@ class Item extends Component{
 
     // Functions that increase and decrease quantity
     IncrementItem = () => {
-      this.setState({
-        clicks: this.state.clicks + 1
-      });
+        // Only increment quantity if there is stock for it
+        if (this.state.clicks < this.state.quantity)
+            this.setState({
+                clicks: this.state.clicks + 1
+            });
     }
     DecreaseItem = () => {
       if (this.state.clicks > 1)
