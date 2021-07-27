@@ -31,7 +31,7 @@ function Cart(){
     }
 
     // Returns html of an item template
-    function addItemAux(){
+    function addItemAux(pos){
         return(
             <div class="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 rounded">
                 <div class="mr-1"><img class="rounded" src={tempImg} width="70"/></div>
@@ -47,7 +47,7 @@ function Cart(){
                     <h5 class="text-primary">$1234.56</h5>
                 </div>
                 <div class="d-flex align-items-center">
-                    <button id="btn" onClick={() => removeItem()}><i class="fa fa-trash text-danger"></i></button>
+                    <button id="btn" onClick={() => removeItem(pos)}><i class="fa fa-trash text-danger"></i></button>
                 </div>
             </div>
         );
@@ -70,7 +70,7 @@ function Cart(){
         https://stackoverflow.com/questions/29577977/unable-to-access-react-instance-this-inside-event-handler/41272784#41272784
     */
     // Removes item from cart length
-    function removeItem(){
+    function removeItem(pos){
         // Updating number of items.
         var length = sessionStorage.getItem('@item/itemsLength');
         length--;

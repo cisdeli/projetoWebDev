@@ -8,15 +8,48 @@ import '../../css/itemPage.css';
 import cat from '../../images/cats/catBanner.jpg'
 
 class Item extends Component{
-    constructor() {
-      super();
-      // Stores user input
-      this.addItem = 0;
-      this.state = {
-        clicks:1,
-        show:true
-      };
-      this.handleSubmit = this.handleSubmit.bind(this);
+    constructor(props) {
+        super(props);
+        // Stores user input
+        this.addItem = 0;
+        this.state = {
+            name: "",
+            description: "",
+            price: "",
+            quantity: 0,
+            clicks: 1,
+            show: true
+        };
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.getData();
+    }
+
+    //Auxiliar functions
+    hasBlankSpace(s) {
+        return /\s/g.test(s);
+    }
+
+    getData(){
+        const { match: { params } } = this.props;
+        const slug = params.slug;
+        if (!this.hasBlankSpace(slug)) {
+            axios.get('http://localhost:8000/products/' + slug)
+                .then((res) => {
+                    if(res.status == 202)
+                        alert("Product not found!")
+                    else if(res.status == 200){
+                        this.setState({
+                            name: res.data.name,
+                            description: res.data.description,
+                            price: res.data.price,
+                            quantity: res.data.quantity
+                        });
+                    }
+                    else if(res.status == 500){
+                        alert("Failed to process requisition")
+                    }
+                })
+        }
     }
 
     // Functions that increase and decrease quantity
@@ -59,9 +92,9 @@ class Item extends Component{
                                 </div>
                             </div>
                             <div class="details col-md-6">
-                                <h3 class="product-title">Template</h3>
-                                <p class="product-description">Lorem ipsum dolor sit amet. Duis aute irure dolor in nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                <h4 class="price">price: <span class="text-primary">$1234.56</span></h4>
+                                <h3 class="product-title">{this.state.name}</h3>
+                                <p class="product-description">{this.state.description}</p>
+                                <h4 class="price">price: <span class="text-primary">{this.state.price}</span></h4>
                                 <h5 class="sizes">quantity:
                                     <div class="d-flex flex-row align-items-center qty">
                                         <button id="btn" onClick={this.DecreaseItem}><i class="fa fa-minus text-danger"></i></button>

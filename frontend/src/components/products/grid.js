@@ -6,8 +6,29 @@ import axios from 'axios';
 class Grid extends Component{
     constructor() {
       super();
+      this.state = {
+          products: []
+      };
+      this.getData();
     }
 
+    getData() {
+        axios.get('http://localhost:8000/products/')
+            .then((res) => {
+                if (res.status == 200) {
+                    this.setState({
+                        products: res.data.map(item => {
+                            return {
+                                ...item,
+                                link: `/itemPage/${item.slug}`
+                            };
+                        })
+                    });
+                } else if (res.status == 500) {
+                    alert("Failed to process requisition")
+                }
+            })
+    }
 
     // Handles add to cart button press
     addToCart() {
@@ -24,7 +45,7 @@ class Grid extends Component{
     }
 
     // Stores a single item Thumbnail template.
-    itemPreview(){
+    itemPreview(itemData){
         return(
             <div class="col">
                 <div class="card shadow-sm">
@@ -34,13 +55,13 @@ class Grid extends Component{
                     </svg>
 
                     <div class="card-body">
-                        <p class="card-text">Product description</p>
+                        <p class="card-text">{itemData.name}</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <a href="/itemPage"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
+                                <a href={itemData.link}><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
                                 <button type="button" onClick={() => this.addToCart()} class="btn btn-sm btn-outline-secondary">Add to cart</button>
                             </div>
-                            <h5><small class="text-primary">R$1234.56</small></h5>
+                            <h5><small class="text-primary">R${itemData.price}</small></h5>
                         </div>
                     </div>
                 </div>
@@ -48,20 +69,12 @@ class Grid extends Component{
         );
     }
 
-    // Returns an array of items.
-    formGrid(){
-        let grid = [], length = 6;
-        for(let i = 0; i < length; i++)
-            grid.push(this.itemPreview());
-        return grid;
-    }
-
     render(){
         return(
             <div class="album py-5 bg-light">
                 <div class="container">
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                        {this.formGrid()}
+                        {this.state.products.map(product => this.itemPreview(product))}
                     </div>
                 </div>
             </div>

@@ -25,7 +25,7 @@ const Main = () => (
         <Route path='/cats' component={Cats}/>
         <Route path='/checkout' component={Checkout}/>
         <Route path='/dogs' component={Dogs}/>
-        <Route path='/itemPage' component={Item}/>
+        <Route path='/itemPage/:slug' component={Item}/>
         <Route path='/login' component={Login}/>
         <Route path='/signup' component={SignUp}/>
         <Route path='/uniqueFeat' component={UniqueFeat}/>
