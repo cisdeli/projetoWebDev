@@ -1,8 +1,16 @@
-import React from "react";
+import React, {
+  Component
+} from 'react';
+import axios from 'axios';
 
-function Grid(){
+class Grid extends Component{
+    constructor() {
+      super();
+    }
+
+
     // Handles add to cart button press
-    function addToCart() {
+    addToCart() {
       // Gets the login id from sessionStorage, null means that user isn't logged.
       let logID = sessionStorage.getItem('@login/id');
       // Checks if the user is logged in
@@ -16,7 +24,7 @@ function Grid(){
     }
 
     // Stores a single item Thumbnail template.
-    function itemPreview(){
+    itemPreview(){
         return(
             <div class="col">
                 <div class="card shadow-sm">
@@ -30,7 +38,7 @@ function Grid(){
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
                                 <a href="/itemPage"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
-                                <button type="button" onClick={() => addToCart()} class="btn btn-sm btn-outline-secondary">Add to cart</button>
+                                <button type="button" onClick={() => this.addToCart()} class="btn btn-sm btn-outline-secondary">Add to cart</button>
                             </div>
                             <h5><small class="text-primary">R$1234.56</small></h5>
                         </div>
@@ -41,22 +49,24 @@ function Grid(){
     }
 
     // Returns an array of items.
-    function formGrid(){
-        let grid = [], length = 9;
+    formGrid(){
+        let grid = [], length = 6;
         for(let i = 0; i < length; i++)
-            grid.push(itemPreview());
+            grid.push(this.itemPreview());
         return grid;
     }
 
-    return(
-        <div class="album py-5 bg-light">
-            <div class="container">
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                    {formGrid()}
+    render(){
+        return(
+            <div class="album py-5 bg-light">
+                <div class="container">
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                        {this.formGrid()}
+                    </div>
                 </div>
             </div>
-        </div>
-    );
+        );
+    }
 }
 
 export default Grid;

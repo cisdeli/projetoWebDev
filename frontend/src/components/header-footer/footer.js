@@ -26,6 +26,7 @@ const Footer = () => (
                     <ul class="list-unstyled text-small">
                         <li><a class="link-secondary" href="https://getbootstrap.com/" target="_blank">Bootstrap</a></li>
                         <li><a class="link-secondary" href="https://fontawesome.com/" target="_blank">Font Awesome</a></li>
+                        <li><a class="link-secondary" href="https://www.mongodb.com/pt-br" target="_blank">Mongodb</a></li>
                         <li><a class="link-secondary" href="https://www.freepik.com/photos/pets" target="_blank">Pets photo created by freepik</a></li>
                         <li><a class="link-secondary" href="https://pt-br.reactjs.org/" target="_blank">ReactJS</a></li>
                     </ul>

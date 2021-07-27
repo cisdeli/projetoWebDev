@@ -1,6 +1,7 @@
 import React, {
   Component
 } from 'react';
+import axios from 'axios';
 
 import '../../css/itemPage.css';
 
@@ -61,12 +62,6 @@ class Item extends Component{
                                 <h3 class="product-title">Template</h3>
                                 <p class="product-description">Lorem ipsum dolor sit amet. Duis aute irure dolor in nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                                 <h4 class="price">price: <span class="text-primary">$1234.56</span></h4>
-
-                                <h5 class="colors">colors:
-                                    <span class="color orange"></span>
-                                    <span class="color green"></span>
-                                    <span class="color blue"></span>
-                                </h5>
                                 <h5 class="sizes">quantity:
                                     <div class="d-flex flex-row align-items-center qty">
                                         <button id="btn" onClick={this.DecreaseItem}><i class="fa fa-minus text-danger"></i></button>
