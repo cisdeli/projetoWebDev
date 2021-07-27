@@ -91,6 +91,37 @@ exports.post = async (req, res, next) => {
     };;
 };
 
+exports.postAdmin = async (req, res, next) => {
+    try {
+        const customerValidator = new CustomerValidator();
+        if (customerValidator.postValidation(req.body)) {
+            const res1 = await repository.create({
+                name: req.body.name,
+                email: req.body.email,
+                password: req.body.password,
+                roles: ['admin']
+            });
+            if (res1 === null) {
+                res.status(202).send([{
+                    message: 'Email already in use'
+                }]);
+            } else{
+                res.status(201).send({
+                    message: "Sucessful sign up"
+                });
+            }
+        } else {
+            res.status(200).send(customerValidator.errors());
+        }
+    } catch (err) {
+        res.status(500).send({
+            message: 'Failed to process requisition',
+            err: err.message,
+            code: err.code
+        });
+    };;
+};
+
 exports.put = async (req, res, next) => {
     try {
         const customerValidator = new CustomerValidator();
@@ -101,13 +132,13 @@ exports.put = async (req, res, next) => {
                     message: 'Email already in use'
                 }]);
             } else {
-                res.status(200).send({
+                res.status(201).send({
                     message: 'User info updated'
                 });
                 next();
             }
         } else {
-            res.status(200).send(customerValidator.errors());
+            res.status(202).send(customerValidator.errors());
         }
     } catch (err) {
         res.status(500).send({
@@ -150,9 +181,9 @@ exports.delete = async (req, res, next) => {
     try {
         const cb = await repository.delete(req.params.id);
         if (cb === null) {
-            res.status(200).send({
+            res.status(202).send([{
                 message: 'User not found'
-            });
+            }]);
         } else {
             res.status(200).send({
                 message: 'User removed'

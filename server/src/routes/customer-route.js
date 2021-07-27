@@ -12,6 +12,7 @@ router.get('/authenticate/:email/:password', controller.authenticate);
 
 // POST
 router.post('/', controller.post);
+router.post('/admin', controller.postAdmin);
 
 // PUT
 // Colocar middleware authService.authorize entre a rota e o metodo do controller

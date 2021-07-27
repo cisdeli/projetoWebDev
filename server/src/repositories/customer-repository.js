@@ -99,10 +99,5 @@ exports.updateAdmin = async (email, value) => {
 }
 
 exports.delete = async (id) => {
-    const res = await Customer.findOneAndRemove(id);
-    // if(res.image) {
-    //     const path = res.image.url;
-    //     fs.unlinkSync(path);
-    // }
-    return res;
+    return await Customer.findByIdAndRemove(id);
 }
