@@ -24,6 +24,11 @@ class Adm extends Component{
             stock_a_product_price: '',
             stock_a_product_quantity: '',
             stock_a_product_category: '',
+            user_s_user_id: '',
+            user_d_user_id: '',
+            user_a_user_name: '',
+            user_a_user_email: '',
+            user_a_user_password: '',
             order_s_user_id: ''
         };
         this.handleChange = this.handleChange.bind(this);
@@ -34,6 +39,11 @@ class Adm extends Component{
         this.handleStockAddSubmit = this.handleStockAddSubmit.bind(this);
 
         // Users
+        this.handleUserSearchSubmit = this.handleUserSearchSubmit.bind(this);
+        this.handleUserDeleteSubmit = this.handleUserDeleteSubmit.bind(this);
+        this.handleUserAddSubmit = this.handleUserAddSubmit.bind(this);
+
+
         // Orders
         this.handleOrdersSearchSubmit = this.handleOrdersSearchSubmit.bind(this);
     }
@@ -179,51 +189,108 @@ class Adm extends Component{
     }
 
     //Users
+    handleUserSearchSubmit(event) {
+        event.preventDefault();
+        const id = this.state.user_s_user_id;
+        if (id) {
+            axios.get('http://localhost:8000/customers/' + id)
+                .then((res) => {
+                    if(res.status == 200){
+                        window.open('http://localhost:8000/customers/' + id, 'blank')
+                    }
+                    else if(res.status == 500){
+                        alert("Failed to process requisition")
+                    }
+                })
+        }
+    }
+
+    handleUserDeleteSubmit(event) {
+        event.preventDefault();
+        const id = this.state.user_d_user_id;
+        if (id) {
+            axios.delete('http://localhost:8000/customers/' + id)
+                .then((res) => {
+                    if(res.status == 202){
+                        alert("User not found")
+                    }
+                    else if(res.status == 200){
+                        alert("User removed")
+                    }
+                    else if(res.status == 500){
+                        alert("Failed to process requisition")
+                    }
+                })
+                .catch((err) => {
+                    alert("Failed to process requisition, make sure the ID has the correct format");
+                })
+        }
+    }
+
+    handleUserAddSubmit(event) {
+        event.preventDefault();
+        const newUser = {
+            name: this.state.user_u_user_name,
+            email: this.state.user_u_user_email,
+            password: this.state.user_u_user_password,
+            roles: ['admin']
+        };
+
+        axios.post('http://localhost:8000/customers/admin', newUser)
+            .then((res) => {
+                if(res.status == 202)
+                    alert("Email already in use!")
+                else if(res.status == 201){
+                    alert("Admin added")
+                }
+                else if(res.status == 200){
+                    alert("Error, make sure that your name has at least 3 letters!")
+                }
+
+            })
+    }
+
     usersFrontEnd(){
         return(
             <div class="container px-4 py-5">
                 <h2 class="pb-2 d-flex justify-content-center border-bottom" id="users">Users Control</h2>
-                <form id="contact-form" role="form">
-                    <div class="controls">
-                        <div class="row py-5">
-                            <div class="col-sm-4">
-                                <div class="form-group">
-                                    <h4 class="pb-2 d-flex justify-content-center border-bottom">Search user by ID</h4>
-                                    <label for="form_id">User ID</label>
-                                    <input id="form_id" type="number" name="id" class="form-control" placeholder="User ID" required="required"/>
-                                    <div class="help-block with-errors"></div>
-                                    <br/>
-                                    <button class="btn btn-lg btn-dark" type="submit">Search</button>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="form-group">
-                                    <h4 class="pb-2 d-flex justify-content-center border-bottom">Delete ser by ID</h4>
-                                    <label for="form_id">User ID</label>
-                                    <input id="form_id" type="number" name="id" class="form-control" placeholder="User ID" required="required"/>
-                                    <div class="help-block with-errors"></div>
-                                    <br/>
-                                    <button class="btn btn-lg btn-dark" type="submit">Delete</button>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="form-group">
-                                    <h4 class="pb-2 d-flex justify-content-center border-bottom">Updated user by ID</h4>
-                                    <label for="form_name">User ID</label>
-                                    <input id="form_id" type="number" name="id" class="form-control" placeholder="User ID" required="required"/>
-                                    <label for="form_name">Name</label>
-                                    <input id="form_name" type="text" name="name" class="form-control" placeholder="User name" required="required"/>
-                                    <label for="form_name">Email</label>
-                                    <input id="form_name" type="email" name="email" class="form-control" placeholder="user@domain.com" required="required"/>
-                                    <label for="form_name">Password</label>
-                                    <input id="form_name" type="number" name="password" class="form-control" placeholder="Password" required="required"/>
-                                    <br/>
-                                    <button class="btn btn-lg btn-dark" type="submit">Update</button>
-                                </div>
-                            </div>
+                <div class="controls">
+                    <div class="row py-5">
+                        <div class="col-sm-4">
+                            <h4 class="pb-2 d-flex justify-content-center border-bottom">Search user by ID</h4>
+                            <form class="form-group" onSubmit={this.handleUserSearchSubmit}>
+                                <label for="form_id">User ID</label>
+                                <input id="form_id" type="text" name="user_s_user_id" class="form-control" placeholder="User ID" onChange={this.handleChange} required="required"/>
+                                <br/>
+                                <button class="btn btn-lg btn-dark" type="submit">Search</button>
+                            </form>
+                            <h4 class="pb-2 py-5 d-flex border-bottom">See users</h4>
+                            <a href="http://localhost:8000/customers" target='blank'><button type="button" class="btn btn-dark">Get User API</button></a>
+                        </div>
+                        <div class="col-sm-4">
+                            <h4 class="pb-2 d-flex justify-content-center border-bottom">Delete ser by ID</h4>
+                            <form class="form-group" onSubmit={this.handleUserDeleteSubmit}>
+                                <label for="form_id">User ID</label>
+                                <input id="form_id" type="text" name="user_d_user_id" class="form-control" placeholder="User ID" onChange={this.handleChange} required="required"/>
+                                <br/>
+                                <button class="btn btn-lg btn-dark" type="submit">Delete</button>
+                            </form>
+                        </div>
+                        <div class="col-sm-4">
+                            <h4 class="pb-2 d-flex justify-content-center border-bottom">Add admin</h4>
+                            <form class="form-group" onSubmit={this.handleUserAddSubmit}>
+                                <label for="form_name">Name</label>
+                                <input id="form_name" type="text" name="user_u_user_name" class="form-control" placeholder="User name" onChange={this.handleChange} required="required"/>
+                                <label for="form_name">Email</label>
+                                <input id="form_name" type="email" name="user_u_user_email" class="form-control" placeholder="user@domain.com" onChange={this.handleChange} required="required"/>
+                                <label for="form_name">Password</label>
+                                <input id="form_name" type="number" name="user_u_user_password" class="form-control" placeholder="Password" onChange={this.handleChange} required="required"/>
+                                <br/>
+                                <button class="btn btn-lg btn-dark" type="submit">Update</button>
+                            </form>
                         </div>
                     </div>
-                </form>
+                </div>
             </div>
         );
     }
@@ -232,7 +299,6 @@ class Adm extends Component{
     handleOrdersSearchSubmit(event) {
         event.preventDefault();
         const id = this.state.order_s_user_id;
-        console.log(id)
         if (id) {
             axios.get('http://localhost:8000/orders/customer/' + id)
                 .then((res) => {
