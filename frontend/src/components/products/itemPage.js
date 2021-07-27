@@ -17,6 +17,7 @@ class Item extends Component{
             description: "",
             price: "",
             quantity: 0,
+            image: "",
             clicks: 1,
             show: true
         };
@@ -42,7 +43,8 @@ class Item extends Component{
                             name: res.data.name,
                             description: res.data.description,
                             price: res.data.price,
-                            quantity: res.data.quantity
+                            quantity: res.data.quantity,
+                            image: res.data.image
                         });
                     }
                     else if(res.status == 500){
@@ -88,7 +90,7 @@ class Item extends Component{
                         <div class="wrapper row">
                             <div class="preview col-md-6">
                                 <div class="tab-content">
-                                    <div class="tab-pane active" id="pic-1"><img src={cat} /></div>
+                                    <div class="tab-pane active" id="pic-1"><img src={this.state.image} /></div>
                                 </div>
                             </div>
                             <div class="details col-md-6">

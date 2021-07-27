@@ -64,9 +64,9 @@ class UniqueFeat extends Component{
                                 </div>
                             </div>
                             <div class="details col-md-6">
-                                <h3 class="product-title">Custom Tag Template</h3>
-                                <p class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pharetra tellus eu neque aliquet fringilla. Ut odio justo, egestas at velit vitae, consequat egestas libero. Pellentesque ullamcorper eros ac imperdiet convallis.  </p>
-                                <h4 class="price">price: <span class="text-primary">$1234.56</span></h4>
+                                <h3 class="product-title">Custom Tag</h3>
+                                <p class="product-description">Want your pet with something unique? Try out our pet tag personalization, you can choose between all this models and put your pet's name on it, make your pet feel special as they are :)</p>
+                                <h4 class="price">price: <span class="text-primary">$49.99</span></h4>
                                 <h5 class="colors py-2">options:
                                     <img src={bone} alt="" width="40px" class="color formats"/>
                                     <img src={circle} alt="" width="40px" class="color formats"/>

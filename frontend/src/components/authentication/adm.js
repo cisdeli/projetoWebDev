@@ -24,6 +24,7 @@ class Adm extends Component{
             stock_a_product_price: '',
             stock_a_product_quantity: '',
             stock_a_product_category: '',
+            stock_a_product_image: '',
             user_s_user_id: '',
             user_d_user_id: '',
             user_a_user_name: '',
@@ -109,6 +110,7 @@ class Adm extends Component{
             price: this.state.stock_a_product_price,
             quantity: this.state.stock_a_product_quantity,
             category: this.state.stock_a_product_category,
+            image: this.state.stock_a_product_image,
         };
 
         if(newProduct.price > 0 && newProduct.quantity > 0 && !this.hasBlankSpace(newProduct.slug)){
@@ -177,6 +179,8 @@ class Adm extends Component{
                                     <input id="form_name" type="number" name="stock_a_product_quantity" class="form-control" placeholder="Must be > 0" onChange={this.handleChange} required="required"/>
                                     <label for="form_name">Category</label>
                                     <input id="form_name" type="text" name="stock_a_product_category" class="form-control" placeholder="Category" onChange={this.handleChange} required="required"/>
+                                    <label for="form_name">Image</label>
+                                    <input id="form_name" type="text" name="stock_a_product_image" class="form-control" placeholder="Category" onChange={this.handleChange} required="required"/>
                                     <br/>
                                     <button class="btn btn-lg btn-dark" type="submit">Add</button>
                                 </form>

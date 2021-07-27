@@ -49,11 +49,10 @@ class Grid extends Component{
         return(
             <div class="col">
                 <div class="card shadow-sm">
-                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns={itemData.image} role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                         <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
+                        <image width="100%" height="100%" href={itemData.image} />
                     </svg>
-
                     <div class="card-body">
                         <p class="card-text">{itemData.name}</p>
                         <div class="d-flex justify-content-between align-items-center">
@@ -70,6 +69,7 @@ class Grid extends Component{
     }
 
     render(){
+        console.log(this.state.products)
         return(
             <div class="album py-5 bg-light">
                 <div class="container">
