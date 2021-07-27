@@ -24,7 +24,6 @@ exports.authenticate = async (data) => {
 
 exports.get = async () => {
     const res = await Customer.find();
-    console.log(res);
     return res;
 }
 

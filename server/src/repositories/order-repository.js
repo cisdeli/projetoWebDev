@@ -41,16 +41,13 @@ exports.create = async (data) => {
 }
 
 exports.get = async () => {
-    const res = await Order.find({}, 'status createDate')
-        .populate('customer', 'name')
-        .populate('items.product', 'name price')
+    const res = await Order.find({}, 'status createDate customer items')
+
     return res;
 }
 
 exports.getByCustomerId = async (id) => {
-    const res = await Order.find({customer: id}, 'items')
-        .populate('customer', 'name')
-        .populate('items.product', 'name price')
+    const res = await Order.find({customer: id}, 'status createDate customer items')
     if (!res.length)
         return null;
     return res;

@@ -45,7 +45,7 @@ class SignUp extends Component{
                         window.location.href = "/login";
                     }
                     else if(res.status == 200){
-                        alert("Error, make sure that your name has at least 3 letters!")
+                        alert("Error, make sure that your fields are in the correct format!")
                     }
 
                 })
