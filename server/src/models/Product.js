@@ -34,7 +34,7 @@ const schema = mongoose.Schema({
         default: 1
     },
     image: {
-        type: Object
+        type: String
     },
     category: {
         type: String,

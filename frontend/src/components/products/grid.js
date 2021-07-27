@@ -4,7 +4,7 @@ import React, {
 import axios from 'axios';
 
 class Grid extends Component{
-    constructor() {
+    constructor({category}) {
       super();
       this.state = {
           products: []
@@ -49,7 +49,7 @@ class Grid extends Component{
         return(
             <div class="col">
                 <div class="card shadow-sm">
-                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns={itemData.image} role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
                         <title>Placeholder</title>
                         <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
                     </svg>
@@ -61,7 +61,7 @@ class Grid extends Component{
                                 <a href={itemData.link}><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
                                 <button type="button" onClick={() => this.addToCart()} class="btn btn-sm btn-outline-secondary">Add to cart</button>
                             </div>
-                            <h5><small class="text-primary">R${itemData.price}</small></h5>
+                            <h5><small class="text-primary">R${itemData.price}.00</small></h5>
                         </div>
                     </div>
                 </div>
@@ -74,7 +74,7 @@ class Grid extends Component{
             <div class="album py-5 bg-light">
                 <div class="container">
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                        {this.state.products.map(product => this.itemPreview(product))}
+                        {this.state.products.filter(product => product.category === this.props.category).map(product => this.itemPreview(product))}
                     </div>
                 </div>
             </div>

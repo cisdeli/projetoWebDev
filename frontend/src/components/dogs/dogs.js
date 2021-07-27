@@ -4,6 +4,7 @@ import React from "react";
 
 import Grid from "../products/grid";
 
+
 // Simply returns the html used for the top banner, the product grid has its own component in "products"
 const Dogs = () => (
     <div>
@@ -20,7 +21,7 @@ const Dogs = () => (
                 </div>
             </section>
         </div>
-        <Grid />
+        <Grid category="dogs"/>
     </div>
 );
 

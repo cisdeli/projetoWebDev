@@ -19,7 +19,7 @@ const Cats = () => (
                 </div>
             </section>
         </div>
-        <Grid />
+        <Grid category="cats"/>
     </div>
 );
 

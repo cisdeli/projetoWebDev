@@ -19,7 +19,7 @@ const Accessories = () => (
                 </div>
             </section>
         </div>
-        <Grid />
+        <Grid category="accessories"/>
     </div>
 );
 

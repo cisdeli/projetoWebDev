@@ -94,7 +94,7 @@ class Item extends Component{
                             <div class="details col-md-6">
                                 <h3 class="product-title">{this.state.name}</h3>
                                 <p class="product-description">{this.state.description}</p>
-                                <h4 class="price">price: <span class="text-primary">{this.state.price}</span></h4>
+                                <h4 class="price">price:<span class="text-primary"> R$ {this.state.price}.00</span></h4>
                                 <h5 class="sizes">quantity:
                                     <div class="d-flex flex-row align-items-center qty">
                                         <button id="btn" onClick={this.DecreaseItem}><i class="fa fa-minus text-danger"></i></button>
