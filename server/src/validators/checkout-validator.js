@@ -39,7 +39,7 @@ CheckoutValidation.prototype.postValidation = (data) => {
     validator.isEmail(data.email, 'Field Email must be in user@domain.com format');
 
     // Address field
-    validator.hasMinLen(data.address, 10, 'Field Address must have at least 10 letters');
+    validator.hasMinLen(data.address, 3, 'Field Address must have at least 3 letters');
     validator.hasMaxLen(data.address, 100, 'Field Address can not have more than 100 letters');
 
     // State field
