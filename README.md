@@ -9,12 +9,18 @@
 - [ ] Comment Code
 - [ ] Fill in project Report
 ### JS Functionalities
-- [ ] Integrate backend
 - [ ] Minor changes
+### Front/Back integration
+- [x] ADM
+- [x] Login
+- [x] Signup
+- [x] Checkout
+- [ ] Product 
 ### Backend
 - [x] Customer
 - [x] Order
 - [x] Product
+- [ ] Add images do product backend
 - [x] Checkout
 
 # Project Report
