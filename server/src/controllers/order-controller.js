@@ -38,7 +38,7 @@ exports.getByCustomerId = async (req, res,  next) => {
     try{
         const cb = await repository.getByCustomerId(req.params.id);
         if(cb === null) {
-            res.status(200).send({message: 'User has no orders'});
+            res.status(202).send({message: 'User has no orders'});
         } else {
             res.status(200).send(cb);
         }
