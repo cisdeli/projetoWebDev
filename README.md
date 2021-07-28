@@ -15,12 +15,13 @@
 - [x] Login
 - [x] Signup
 - [x] Checkout
-- [ ] Product 
+- [x] Product 
+- [ ] Orders
 ### Backend
 - [x] Customer
 - [x] Order
 - [x] Product
-- [ ] Add images do product backend
+- [x] Add images do product backend
 - [x] Checkout
 
 # Project Report
@@ -141,8 +142,12 @@
     # Shortly after a page should open automatically.
     # You can also access it through http://localhost:3000/.
 ```
+#### *Ask for a projet group memember for the connection string to the data base!*
+* Insert the string (field _connectionString_) in the file _config.js_ in _server/src/config.js_.
+* Grid key is not necessary.
 
 ##### Install the necessary dependencies using npm and start the *server*
+* Make sure you are in another therminal and in the root directory!
 
 ```sh
     # Make sure to run the following commands inside 'server' folder
