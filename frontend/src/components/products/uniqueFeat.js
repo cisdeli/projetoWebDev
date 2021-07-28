@@ -14,10 +14,11 @@ class UniqueFeat extends Component{
         this.state = {
             name: "",
             description: "",
-            price: "",
+            price: 0,
             quantity: 0,
             image: "https://image.flaticon.com/icons/png/512/5066/5066559.png",
             format: "Bone",
+            id: "",
             clicks: 1,
             show: true
         };
@@ -55,9 +56,11 @@ class UniqueFeat extends Component{
         var arr = JSON.parse(sessionStorage.getItem('@login/productArr'))
         arr.push({
             name: "Custom Collar " +"- "+ this.state.format,
-            price: "6.99",
+            price: 7,
             image:this.state.image,
-            quantity: this.state.clicks});
+            quantity: this.state.clicks,
+            id: this.state.id
+        });
         sessionStorage.setItem('@login/productArr', JSON.stringify(arr))
         alert("Item added to cart!");
         // window.location.href = "/cart";
@@ -66,14 +69,19 @@ class UniqueFeat extends Component{
     }
 
     handleFormat() {
-        if (this.state.format == "Bone")
+        if (this.state.format == "Bone") {
             this.state.image = "https://image.flaticon.com/icons/png/512/5066/5066559.png"
-        else if (this.state.format == "Heart")
+            this.state.id = "6100c4547914256ca831a4b0";
+        } else if (this.state.format == "Heart") {
             this.state.image = "https://image.flaticon.com/icons/png/512/932/932841.png"
-        else if (this.state.format == "Paw")
+            this.state.id = "6100c44b7914256ca831a4ae";
+        } else if (this.state.format == "Paw") {
             this.state.image = "https://image.flaticon.com/icons/png/512/1152/1152776.png"
-        else if (this.state.format == "Tag")
+            this.state.id = "6100c4687914256ca831a4b4";
+        } else if (this.state.format == "Tag") {
             this.state.image = "https://image.flaticon.com/icons/png/512/1237/1237606.png"
+            this.state.id = "6100c45c7914256ca831a4b2";
+        }
     }
 
     render() {
@@ -90,7 +98,7 @@ class UniqueFeat extends Component{
                             <div class="details col-md-6">
                                 <h3 class="product-title">Custom Tag</h3>
                                 <p class="product-description">Want your pet with something unique? Try out our pet tag personalization, you can choose between all this models, make your pet feel special as they are :)</p>
-                                <h4 class="price">price: <span class="text-primary">$6.99</span></h4>
+                                <h4 class="price">price: <span class="text-primary">$7.00</span></h4>
                                 <h5 class="colors py-2">options:
                                 <select id="formats" class="form-select" aria-label="Default select example" onChange={this.handleChange}>
                                   <option selected value="Bone">Bone</option>

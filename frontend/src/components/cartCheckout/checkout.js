@@ -11,6 +11,7 @@ class Checkout extends Component{
     constructor() {
       super();
       this.arr = JSON.parse(sessionStorage.getItem('@login/productArr'));
+      this.total = 0;
       // Stores user input (not secure at all please read the Comment topic in README)
       this.state = {
         firstName: '',
@@ -59,16 +60,37 @@ class Checkout extends Component{
                 if(res.status == 200)
                     alert("Error, make sure that your fields are in the correct format!")
                 else if(res.status == 201){
-                    alert("Sucessful order, thank you!")
+                    alert("Sucessful Checkout, thank you!")
                     //remove cart items
-                    sessionStorage.setItem('@item/itemsLength', 0);
-                    window.location.href = "/";
+                    // window.location.href = "/";
                 }
                 else if(res.status == 500){
                     alert("Failed to process requisition!")
                 }
 
             })
+
+        var items = new Array();
+        for(var i = 0; i < this.arr.length; i++)
+            items.push({quantity: this.arr[i].quantity, price: this.arr[i].price, product: this.arr[i].id});
+        const newOrder = {
+            customer: sessionStorage.getItem('@login/id'),
+            items: items,
+            totalPrice: this.total
+        };
+        axios.post('http://localhost:8000/orders/', newOrder)
+            .then((res) => {
+                if(res.status == 200){
+                    alert("Sucessful order, thank you!")
+                    var arr = new Array();
+                    sessionStorage.setItem('@login/productArr', JSON.stringify(arr))
+                    window.location.href = "/";
+                }
+                else if(res.status == 500){
+                    alert("Failed to process requisition!")
+                }
+            })
+
 
     }
 
@@ -86,13 +108,13 @@ class Checkout extends Component{
 
     // Returns the total template.
     addTotal(){
-        var total = 0;
+        this.total = 0;
         for(var i = 0; i < this.arr.length; i++)
-            total += (this.arr[i].price * this.arr[i].quantity);
+            this.total += (this.arr[i].price * this.arr[i].quantity);
         return(
             <li class="list-group-item d-flex justify-content-between">
                 <span>Total (BRL)</span>
-                <strong>R$ {total}</strong>
+                <strong>R$ {this.total}</strong>
             </li>
         );
     }

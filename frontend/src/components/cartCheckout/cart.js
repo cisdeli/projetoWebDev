@@ -80,7 +80,7 @@ class Cart extends Component{
                         <div class="p-2">
                             <h4>Shopping cart</h4>
                         </div>
-                        {this.arr.map((product, index) => this.addItem(index, product))}
+                        {this.arr.length ? this.arr.map((product, index) => this.addItem(index, product)) : null}
                         {this.addEnd()}
                     </div>
                 </div>

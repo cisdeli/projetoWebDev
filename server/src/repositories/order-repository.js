@@ -41,7 +41,7 @@ exports.create = async (data) => {
 }
 
 exports.get = async () => {
-    const res = await Order.find({}, 'status createDate customer items')
+    const res = await Order.find({}, 'status createDate customer items totalPrice')
 
     return res;
 }

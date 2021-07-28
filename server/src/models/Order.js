@@ -25,7 +25,7 @@ const schema = mongoose.Schema({
             default: 1
         },
         price: {
-            trype: Number,
+            type: Number,
         },
         product: {
             type: mongoose.Schema.Types.ObjectId,

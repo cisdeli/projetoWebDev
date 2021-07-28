@@ -18,6 +18,7 @@ class Item extends Component{
             price: "",
             quantity: 0,
             image: "",
+            id: "",
             clicks: 1,
             show: true
         };
@@ -45,7 +46,8 @@ class Item extends Component{
                             description: res.data.description,
                             price: res.data.price,
                             quantity: res.data.quantity,
-                            image: res.data.image
+                            image: res.data.image,
+                            id: res.data._id
                         });
                     }
                     else if(res.status == 500){
@@ -83,7 +85,9 @@ class Item extends Component{
             name: this.state.name,
             price: this.state.price,
             image: this.state.image,
-            quantity: this.state.clicks});
+            quantity: this.state.clicks,
+            id: this.state.id
+        });
         sessionStorage.setItem('@login/productArr', JSON.stringify(arr))
         alert("Item added to cart!");
         // window.location.href = "/cart";
