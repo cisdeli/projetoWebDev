@@ -9,14 +9,14 @@
 - [x] Comment Code
 - [x] Fill in project Report
 ### JS Functionalities
-- [ ] Minor changes
+- [x] Minor changes
 ### Front/Back integration
 - [x] ADM
 - [x] Login
 - [x] Signup
 - [x] Checkout
 - [x] Product 
-- [ ] Orders
+- [x] Orders
 ### Backend
 - [x] Customer
 - [x] Order
@@ -142,7 +142,7 @@
     # Shortly after a page should open automatically.
     # You can also access it through http://localhost:3000/.
 ```
-#### *Ask for a projet group memember for the connection string to the data base!*
+#### *Ask for a project group memember for the connection string to the data base!*
 * Insert the string (field _connectionString_) in the file _config.js_ in _server/src/config.js_.
 * Grid key is not necessary.
 
