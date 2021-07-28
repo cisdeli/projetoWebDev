@@ -290,7 +290,7 @@ class Adm extends Component{
                                 <label for="form_name">Password</label>
                                 <input id="form_name" type="number" name="user_u_user_password" class="form-control" placeholder="Password" onChange={this.handleChange} required="required"/>
                                 <br/>
-                                <button class="btn btn-lg btn-dark" type="submit">Update</button>
+                                <button class="btn btn-lg btn-dark" type="submit">Add</button>
                             </form>
                         </div>
                     </div>

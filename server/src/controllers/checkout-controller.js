@@ -33,7 +33,6 @@ exports.getById = async (req, res, next) => {
 exports.post = async (req, res, next) => {
     try {
         const checkoutValidator = new CheckoutValidator();
-        console.log(req.body);
         if (checkoutValidator.postValidation(req.body)) {
             const res1 = await repository.post({
                 firstName: req.body.firstName,
@@ -49,7 +48,6 @@ exports.post = async (req, res, next) => {
                 cvv:req.body.cvv
 
             });
-            console.log(res1);
             res.status(201).send({
                 message: "Sucessful checkout"
             });
