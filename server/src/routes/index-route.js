@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.get('/', (req, res, next) => {
     res.status(200).send({
-        title: "Pet Do Shop",
+        title: "Shop do Pet",
         version: "0.0.1"
     });
 });
