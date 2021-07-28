@@ -10,8 +10,8 @@ import cat from '../../images/cats/catBanner.jpg'
 class Item extends Component{
     constructor(props) {
         super(props);
+        this.slug = "";
         // Stores user input
-        this.addItem = 0;
         this.state = {
             name: "",
             description: "",
@@ -33,6 +33,7 @@ class Item extends Component{
     getData(){
         const { match: { params } } = this.props;
         const slug = params.slug;
+        this.slug = params.slug;
         if (!this.hasBlankSpace(slug)) {
             axios.get('http://localhost:8000/products/' + slug)
                 .then((res) => {
@@ -76,10 +77,16 @@ class Item extends Component{
       let logID = sessionStorage.getItem('@login/id');
       // Checks if the user is logged in
       if (logID) {
-        // Stores that an item should be added and go to cart page.
-        this.addItem = 1;
-        sessionStorage.setItem('@item/shouldAdd', this.addItem);
-        window.location.href = "/cart";
+        // Stores an item and go somewhere.
+        var arr = JSON.parse(sessionStorage.getItem('@login/productArr'))
+        arr.push({
+            name: this.state.name,
+            price: this.state.price,
+            image: this.state.image,
+            quantity: this.state.clicks});
+        sessionStorage.setItem('@login/productArr', JSON.stringify(arr))
+        alert("Item added to cart!");
+        // window.location.href = "/cart";
       } else
         alert("Please log in!");
     }
@@ -91,9 +98,9 @@ class Item extends Component{
                     <div class="container-fliud">
                         <div class="wrapper row">
                             <div class="preview col-md-6">
-                                <div class="tab-content">
-                                    <div class="tab-pane active" id="pic-1"><img src={this.state.image} /></div>
-                                </div>
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <img alt="Card image cap" class="card-img-top embed-responsive-item" src={this.state.image} />
+                               </div>
                             </div>
                             <div class="details col-md-6">
                                 <h3 class="product-title">{this.state.name}</h3>

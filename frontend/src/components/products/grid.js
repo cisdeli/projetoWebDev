@@ -3,6 +3,8 @@ import React, {
 } from 'react';
 import axios from 'axios';
 
+import '../../css/grid.css';
+
 class Grid extends Component{
     constructor({category}) {
       super();
@@ -30,35 +32,19 @@ class Grid extends Component{
             })
     }
 
-    // Handles add to cart button press
-    addToCart() {
-      // Gets the login id from sessionStorage, null means that user isn't logged.
-      let logID = sessionStorage.getItem('@login/id');
-      // Checks if the user is logged in
-      if (logID) {
-        // Stores that an item should be added and go to cart page.
-        let addItem = 1;
-        sessionStorage.setItem('@item/shouldAdd', addItem);
-        window.location.href = "/cart";
-      } else
-        alert("Please log in!");
-    }
-
     // Stores a single item Thumbnail template.
     itemPreview(itemData){
         return(
             <div class="col">
                 <div class="card shadow-sm">
-                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>Placeholder</title>
-                        <image width="100%" height="100%" href={itemData.image} />
-                    </svg>
+                    <div class="embed-responsive embed-responsive-16by9">
+                       <img alt="Card image cap" class="card-img-top embed-responsive-item" src={itemData.image} />
+                    </div>
                     <div class="card-body">
                         <p class="card-text">{itemData.name}</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
                                 <a href={itemData.link}><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
-                                <button type="button" onClick={() => this.addToCart()} class="btn btn-sm btn-outline-secondary">Add to cart</button>
                             </div>
                             <h5><small class="text-primary">R${itemData.price}.00</small></h5>
                         </div>
@@ -69,7 +55,6 @@ class Grid extends Component{
     }
 
     render(){
-        console.log(this.state.products)
         return(
             <div class="album py-5 bg-light">
                 <div class="container">

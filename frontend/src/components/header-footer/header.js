@@ -26,7 +26,7 @@ class Header extends Component{
         sessionStorage.removeItem('@login/id');
         sessionStorage.removeItem('@login/name');
         sessionStorage.removeItem('@login/isADM');
-        sessionStorage.setItem('@item/itemsLength', 0);
+        sessionStorage.removeItem('@login/productArr');
         this.name = "";
         this.isADM = null;
         this.logID = null;

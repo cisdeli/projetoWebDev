@@ -10,6 +10,7 @@ import cart from '../../images/logos/cart.svg'
 class Checkout extends Component{
     constructor() {
       super();
+      this.arr = JSON.parse(sessionStorage.getItem('@login/productArr'));
       // Stores user input (not secure at all please read the Comment topic in README)
       this.state = {
         firstName: '',
@@ -52,7 +53,6 @@ class Checkout extends Component{
             expiration: this.state.expiration,
             cvv: this.state.cvv,
         }
-        console.log(newForm);
         // Checks input data when submit button is pressed.
         axios.post('http://localhost:8000/checkout/', newForm)
             .then((res) => {
@@ -73,38 +73,26 @@ class Checkout extends Component{
     }
 
     // Stores a single item in cart
-    itemInCart(){
+    itemInCart(itemData){
         return(
             <li class="list-group-item d-flex justify-content-between lh-sm">
                 <div>
-                    <h6 class="my-0">Name of the product</h6>
-                    <small class="text-muted">Description of the product</small>
+                    <h6 class="my-0">{itemData.quantity} x {itemData.name}</h6>
                 </div>
-                <span class="text-muted">$1234.56</span>
+                <span class="text-muted">R$ {itemData.price * itemData.quantity}</span>
             </li>
         );
     }
 
-    // Returns an array of items in cart according to cart length
-    addItemToCart(){
-        let items = [], length = 0;
-        length = sessionStorage.getItem('@item/itemsLength');
-        for(let i = 0; i < length; i++)
-            items.push(this.itemInCart());
-        return items;
-    }
-
-    // Auxiliar function to get the array of items.
-    showCartItems(){
-        return (this.addItemToCart());
-    }
-
     // Returns the total template.
     addTotal(){
+        var total = 0;
+        for(var i = 0; i < this.arr.length; i++)
+            total += (this.arr[i].price * this.arr[i].quantity);
         return(
             <li class="list-group-item d-flex justify-content-between">
-                <span>Total (USD)</span>
-                <strong>$1234.56</strong>
+                <span>Total (BRL)</span>
+                <strong>R$ {total}</strong>
             </li>
         );
     }
@@ -124,7 +112,7 @@ class Checkout extends Component{
                             <span class="text-primary">Your cart</span>
                         </h4>
                         <ul class="list-group mb-3">
-                            {this.showCartItems()}
+                            {this.arr.map((product) => this.itemInCart(product))}
                             {this.addTotal()}
                         </ul>
                     </div>

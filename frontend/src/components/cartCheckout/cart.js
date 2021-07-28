@@ -4,10 +4,13 @@ import React, {
 import axios from 'axios';
 
 import '../../css/cart.css';
-
-import tempImg from "../../images/home/accessories.jpg"
+import dog from '../../images/uniqueFeat/dogWithTag.jpg'
 
 class Cart extends Component{
+    constructor(props) {
+        super(props);
+        this.arr = JSON.parse(sessionStorage.getItem('@login/productArr'));
+    }
     // Returns Checkout button.
     addButton(){
         return(
@@ -26,44 +29,33 @@ class Cart extends Component{
     }
     // Check which (Checkout button or Empty text) should be added
     addEnd(){
-        var length = sessionStorage.getItem('@item/itemsLength');
         // If there are items add Checkout button, if not add text empty cart.
-        if(length >= 1)
+        if(this.arr.length >= 1)
             return this.addButton();
         else
             return this.addEmpty();
     }
 
+
     // Returns html of an item template
-    addItemAux(pos){
+    addItem(pos, itemData){
         return(
-            <div class="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 rounded">
-                <div class="mr-1"><img class="rounded" src={tempImg} width="70"/></div>
-                <div class="d-flex flex-column align-items-center product-details"><span class="font-weight-bold">Name of the product</span>
-                    <div class="d-flex flex-row product-desc">
-                        <div class="size mr-1"><span class="text-grey">Description of the product</span></div>
-                    </div>
+            <div class="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-2 rounded">
+                <div class="mr-1">
+                    <img class="rounded" src={itemData.image} width="70"/></div>
+                    <div class="d-flex flex-column align-items-between product-details"><span class="font-weight-bold">{itemData.name}</span>
                 </div>
                 <div class="d-flex flex-row align-items-center qty">
-                    <h5 class="text-grey mt-1 mr-1 ml-1">1</h5>
+                    <h5 class="text-grey mt-1 mr-1 ml-1">{itemData.quantity}</h5>
                 </div>
                 <div>
-                    <h5 class="text-primary">$1234.56</h5>
+                    <h5 class="text-primary">R$ {itemData.price * itemData.quantity}</h5>
                 </div>
                 <div class="d-flex align-items-center">
                     <button id="btn" onClick={() => this.removeItem(pos)}><i class="fa fa-trash text-danger"></i></button>
                 </div>
             </div>
         );
-    }
-
-    // Forms the array of items according to cart length.
-    addItem(){
-        let items = [], length = 0;
-        length = sessionStorage.getItem('@item/itemsLength');
-        for(let i = 0; i < length; i++)
-            items.push(this.addItemAux());
-        return items;
     }
 
     /*
@@ -74,37 +66,12 @@ class Cart extends Component{
         https://stackoverflow.com/questions/29577977/unable-to-access-react-instance-this-inside-event-handler/41272784#41272784
     */
     // Removes item from cart length
-    removeItem(pos){
-        // Updating number of items.
-        var length = sessionStorage.getItem('@item/itemsLength');
-        length--;
-        sessionStorage.setItem('@item/itemsLength', length);
+    removeItem(pos, arrId) {
+        // Updating items list
+        this.arr.splice(pos, 1);
+        sessionStorage.setItem('@login/productArr', JSON.stringify(this.arr))
         window.location.reload();
     }
-
-    // Checks if an item was added through AddToCart buttons in Grid and ItemPages.
-    shouldAdd() {
-      let hasItem = sessionStorage.getItem('@item/shouldAdd');
-      let aux = hasItem;
-      if (aux) {
-        // Removing hasItem and shouldAdd for next addition.
-        hasItem = 0;
-        sessionStorage.removeItem('@item/shouldAdd');
-
-        // Updating number of items.
-        var length = sessionStorage.getItem('@item/itemsLength');
-        length++;
-        sessionStorage.setItem('@item/itemsLength', length);
-      }
-    }
-
-    showCartItems(){
-        // Should add another item?
-        this.shouldAdd();
-        // Renders all items.
-        return (this.addItem());
-    }
-
     render(){
         return(
             <div class="container mt-5 mb-5">
@@ -113,7 +80,7 @@ class Cart extends Component{
                         <div class="p-2">
                             <h4>Shopping cart</h4>
                         </div>
-                        {this.showCartItems()}
+                        {this.arr.map((product, index) => this.addItem(index, product))}
                         {this.addEnd()}
                     </div>
                 </div>

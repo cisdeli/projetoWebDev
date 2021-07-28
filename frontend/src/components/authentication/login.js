@@ -39,6 +39,8 @@ class Login extends Component{
                     const userData = res.data.data;
                     sessionStorage.setItem('@login/id', userData._id);
                     sessionStorage.setItem('@login/name', userData.name);
+                    var arr = new Array();
+                    sessionStorage.setItem('@login/productArr', JSON.stringify(arr))
                     if (userData.roles == 'user'){
                         window.location.href = "/";
                     }
